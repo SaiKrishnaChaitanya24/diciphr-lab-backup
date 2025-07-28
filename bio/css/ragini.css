@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+html, body {
+    position: absolute;
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
+}
+
+body p, ul, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+body ul {
+    list-style-type: none;
+}
+
+.outside-container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.nav-bar-container {
+    padding: 2em 0em;
+}
+
+img.lab-logo {
+    height: 70px;
+    width: auto;
+}
+
+.home-link {
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+nav {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 5%;
+}
+
+.nav-bar-container ul li {
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.2em;
+}
+
+.nav-bar-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.current-tab {
+    color: #51D1E8;
+}
+
+/* Custom CSS Starts */
+.bio {
+    width: 100%;
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.left-container {
+    width: 55%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-title {
+    text-align: center;
+    padding-top: 70px;
+}
+
+.name {
+    font-size: 4.5em;
+    font-weight: 400;
+    color: black;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: 420;
+    color: #39B7CD;
+    padding: 3% 0;
+}
+
+.bio-text {
+    width: 60%;
+    padding-top: 7%;
+}
+
+.blue-box {
+    background-color: #DDFBFC;
+    max-width: 700px;
+    padding: 5% 10%;
+}
+
+.main-text {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.right-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.round-imgs {
+    width: 19.375em;
+    height: 19.375em;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: bisque;
+}
+
+.round-imgs img {
+    height: 100%;
+    width: auto;
+}
+
+.red-box {
+    width: 250px;
+    background-color: #FA6256;
+    margin-top: 20%;
+    padding: 5% 8%;
+}
+
+.red-text {
+    color: white;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.edu {
+    padding-top: 20px;
+    font-size: 0.8em;
+}
+
+.red-text li {
+    padding-bottom: 20px;
+}
+
+.contact {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    margin-top: 5%;
+    background-color: #EEEEEE;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.penn-logo {
+    height: 6em;
+    width: auto;
+}
+
+.pennmed-logo {
+    height: 5.75em;
+    width: auto;
+    padding-right: 15em;
+}
+
+.footy-cont {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+.twitter {
+    height: 3.625em;
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-decoration: none;
+    color: black;
+}
+
+.facebook {
+    height: 64px;
+    width: auto;
+    padding-left: 20%;
+    padding-right: 3%;
+}
+
+.contact a {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    body, header {
+        transform: none;
+        /* Remove scaling */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .outside-container, .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+    .right-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order:1;
+    }
+    .left-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order:2;
+    }
+
+    .name-title, .title, .main-text, .red-text, .footy-cont {
+        text-align: center;
+        width: 100%;
+        padding: 5%;
+    }
+
+    .bio-text, .blue-box, .main-text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact {
+        text-align: left;
+        width: 100%;
+        padding-right: 5%;
+    }
+
+    .red-box {
+        width: 80%;
+        background-color: #FA6256;
+        margin-top: 20%;
+        padding: 5% 8%;
+    }
+
+    .round-imgs img {
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-bar-container ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-bar-container ul li {
+        padding: 1em 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 2em 5%;
+    }
+
+    .pennmed-logo {
+        padding-right: 0;
+    }
+
+    .footy-cont {
+        margin: 1em 0;
+    }
+}

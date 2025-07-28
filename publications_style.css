@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/reset.scss";
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/layout.scss";
+
+html,body{
+    /* background-color: #333333 */
+    position: absolute;
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
+    
+}
+
+body p,ul,h1{
+    margin: 0;
+    padding: 0;
+}
+
+body ul{
+    list-style-type: none;
+}
+
+
+.outside-container{
+    margin:0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* max-width: 2500px; */
+    /* background-color: darkkhaki; */
+}
+
+.container{
+    /* margin-left: 10em;
+    margin-right:10em; */
+    margin:0 auto;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    max-width: 1920px;
+    /* background-color: lightblue; */
+    text-align: center;
+}
+
+
+
+.nav-bar-container{
+    /* margin-top: 2em; */
+    padding: 2em 0em;
+    /* background-color: white; */
+}
+
+img.lab-logo{
+    height:70px;
+    width: auto;
+    /* margin-left: 5%;
+    margin-right: 10%; */
+}
+
+.home-link{
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+
+nav{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+nav ul{
+    display: flex;
+    /* justify-content: space-between; */
+    /* padding: 5em; */
+    /* background-color: azure; */
+    margin-right: 5%;
+}
+
+.nav-bar-container ul li {
+    /* background-color: brown; */
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.2em;
+
+}
+
+.nav-bar-container a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.current-tab    {
+    color: #51D1E8;
+}
+
+
+
+.pub-title{
+    margin-top: 5%;
+    display: flex;
+    justify-content:space-between;
+}
+
+.big-title{
+    font-size: 3em;
+    color: #39B7CD;
+    font-weight: 500;
+    padding-left: 10%;
+}
+
+
+.all-pubs-link{
+    padding-right: 10%;
+}
+
+.all-pubs-button{
+    /* background-color: #F5F5F5; */
+    background-color: #FC5E52;
+    border: none;
+    color: white;
+    padding: 15px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.all-cards{
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+.research-card{
+/* margin-top: 5%; */
+/* margin-left: 100px; */
+margin-right: 8%;
+display: inline-block;
+margin-bottom: 5%;
+}
+
+.research-card-2{
+    /* margin-top: 10%; */
+    margin-left: 8%;
+    /* margin-right: 10%; */
+    /* margin-right: 8%; */
+    display: inline-block;
+    }
+
+.img-cont{
+    width: 45%;
+}
+
+.round-imgs {
+width: 200px;
+height: 200px;
+overflow: hidden;
+border-radius: 50%;
+z-index: 100;
+
+
+}
+
+
+.round-imgs img {
+  margin: 0 auto; 
+  height: 100%;
+  width: auto;
+}
+
+
+.paper-round-imgs {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 100;
+    
+    }
+    
+    
+    .paper-round-imgs img {
+      margin: 0 auto; 
+      height: 100%;
+      width: auto;
+    }
+    
+
+
+.box{
+    /* z-index: -1; */
+position: relative;   
+bottom: 50px;
+left: 150px; 
+background-color: #FCFCFC;
+height: auto;
+width: 70%;
+max-width: 500px;
+border-radius: 44px;
+padding-left: 10%;
+padding-right: 10%;
+padding-bottom: 5%;
+padding-top: 5%;
+}
+
+.title{
+    text-align: center;
+    /* padding-top: 30px; */
+    margin: 0px 30px;
+    color:#39B7CD;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.pub{
+    text-align: center;
+margin-top: 30px;
+color: #577083;
+font-weight: 500;
+}
+
+.summary{
+    /* text-align: center; */
+    margin-top: 30px;
+    color: #848484;
+}
+
+.author{
+    margin-top: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.author-name{
+    padding-left: 5%;
+}
+
+.link-button{
+text-align: right;
+padding-right: 5%;
+}
+
+.button {
+    background-color: #39B7CD;
+    border: none;
+    color: white;
+    padding: 15px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+
+ 
+  }
+
+  .a{
+      z-index: 100;
+  }
+
+  .flex-cont{
+      display: flex;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      justify-content: space-around;
+  }
+
+  .round-imgs-small {
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 50%;
+    /* margin: 0 auto; */
+}
+
+.round-imgs-small img {
+    margin: 0 auto; 
+    height: 135%;
+    width: auto;
+  }
+  
+.zoom-out img{
+    margin: 0 auto; 
+    height: 125%;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+  .footer{
+
+
+
+    margin-top: 5%;
+    background-color: #EEEEEE;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 5%;
+
+
+}
+
+
+.penn-logo{
+    height: 6em;
+    width: auto;
+}
+
+.pennmed-logo{
+    height: 5.75em;
+    width: auto;
+    padding-right: 15em;
+}
+
+
+.footy-cont{
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.footy-cont{
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+.twitter{
+    height: 58px;
+    width:auto;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        transform: scale(4.00);  /* Adjust the scale factor as needed */
+        transform-origin: top left; /* Ensures the scale starts from the top-left corner */
+    }
+    header {
+        transform: scale(0.75);  /* Adjust the scale factor as needed */
+        transform-origin: top left; /* Ensures the scale starts from the top-left corner */
+    }
+    
+}

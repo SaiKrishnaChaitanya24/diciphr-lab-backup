@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/reset.scss";
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/layout.scss";
+
+html,body{
+    /* background-color: #333333 */
+    position: absolute;
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    /* height: 100%; */
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
+}
+
+body p,ul,h1{
+    margin: 0;
+    padding: 0;
+}
+
+body ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.outside-container{
+    margin:0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* max-width: 2500px; */
+    /* background-color: darkkhaki; */
+}
+
+.container{
+    /* margin-left: 10em;
+    margin-right:10em; */
+    margin:0 auto;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    max-width: 120em;
+    /* background-color: lightblue; */
+}
+
+
+
+.nav-bar-container{
+    /* margin-top: 2em; */
+    padding: 2em 0em;
+    /* background-color: white; */
+}
+
+img.lab-logo{
+    height:4.375em;
+    width: auto;
+    /* margin-left: 5%;
+    margin-right: 10%; */
+}
+
+.home-link{
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+nav{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    /* justify-content: space-between; */
+    /* padding: 5em; */
+    /* background-color: azure; */
+    margin-right: 5%;
+}
+
+.nav-bar-container ul li {
+    /* background-color: brown; */
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.2em;
+}
+
+.nav-bar-container a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.current-tab    {
+    color: #51D1E8;
+}
+
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 10em;
+    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow:auto
+}
+
+.drop-item-1{
+    padding-top: 0.625em;
+}
+
+.drop-item-2{
+    padding-top: 0.625em;
+    padding-bottom: 0.625em;
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+a{
+    color: black;
+}
+
+.main-title{
+    font-size: 2.7em;
+   text-align: center;
+   padding-top: 3%;
+   padding-bottom: 5%;
+   color: #51D1E8;
+   font-weight: 500;
+}
+
+.title{
+    font-size: 2.3em;
+    font-weight: 500;
+    /* margin-left: 5%;
+    margin-right: 10%; */
+    color:#51D1E8;
+    padding-top:2%;
+    padding-bottom: 5% ;
+}
+
+.name{
+    font-size: 1.3em;
+    font-weight: 420;
+    color:black;
+    text-align: center;
+    height: 0%;
+}
+
+.round-imgs {
+    width: 12.5em;
+    height: 12.5em;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.round-imgs img {
+    margin: 0 auto; 
+    height: 135%;
+    width: auto;
+}
+
+.alex-img{
+    margin: 0 auto; 
+    height: 93% !important;
+    width: auto;
+    padding-left: 5%;
+}
+.yusuf-img{
+    margin: 0 auto; 
+    height: 118% !important;
+    width: auto;
+}
+
+.david-img{
+    margin: 0 auto; 
+    height: 117% !important;
+    width: auto;
+}
+
+.jacob-img{
+    margin: 0 auto; 
+    height: 115% !important;
+    width: auto;
+}
+
+.jihun-img{
+    margin: 0 auto; 
+    height: 125% !important;
+    width: auto;
+}
+
+.yasser-img{
+    margin: 0 auto; 
+    height: 100% !important;
+    width: auto;
+}
+
+.zoom-out img{
+    margin: 0 auto; 
+    height: 125%;
+    width: auto;
+}
+
+.team-cont{
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-cont .name{
+    padding: 2.1875em 0;
+}
+
+
+.footer{
+    margin-top: 5%;
+    background-color: #EEEEEE;
+    height: 8.125em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    /* position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px; */
+}
+
+
+.penn-logo{
+    height: 6em;
+    width: auto;
+}
+
+.pennmed-logo{
+    height: 5.75em;
+    width: auto;
+    padding-right: 15em;
+}
+
+.footy-cont{
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.footy-cont{
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+.twitter{
+    height: 3.625em;
+    width:auto;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+
+.flex-wrapper {
+    display: flex;
+    min-height: 90vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+@media screen and (max-width: 768px) {
+    body {
+        transform: scale(0.45);  /* Adjust the scale factor as needed */
+        transform-origin: top left; /* Ensures the scale starts from the top-left corner */
+    }
+    header {
+        transform: scale(0.75);  /* Adjust the scale factor as needed */
+        transform-origin: top left; /* Ensures the scale starts from the top-left corner */
+    }
+    .main-title{
+        text-align: center !important;
+    }
+    .team-cont{
+        padding: 0 10%;
+        display: flex;
+        justify-content: space-around;
+    }
+}

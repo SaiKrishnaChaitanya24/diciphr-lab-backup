@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/reset.scss";
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/layout.scss";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+body p, ul, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+body ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.outside-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.nav-bar-container {
+    padding: 2em 0em;
+}
+
+img.lab-logo {
+    height: 70px;
+    width: auto;
+}
+
+.home-link {
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+nav {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 5%;
+}
+
+.nav-bar-container ul li {
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.4em;
+}
+
+.nav-bar-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.current-tab {
+    color: #51D1E8;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important;
+    filter: none !important;
+}
+
+.item {
+    height: 400px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider {
+    margin-top: 100px;
+    width: 90%;
+    max-height: 600px;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sliding-image {
+    padding-left: 12%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.carousel-inner img {
+    width: 600px;
+    height: auto;
+    max-height: 350px;
+}
+
+.slider-title-text {
+    font-size: 2em;
+    font-weight: 420;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.title {
+    margin-top: 3%;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 550;
+    color: #51D1E8;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+.research-categories {}
+
+.research-item {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.research-icon {
+    object-fit: contain;
+    width: 250px;
+    height: 100px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.contents {}
+
+.contents .sub-title {
+    font-size: 2.2em;
+    font-weight: 550;
+    color: #51D1E8;
+    margin-top: 20px;
+    margin-bottom: 3%;
+}
+
+.description {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    font-weight: 100;
+    margin-right: 15%;
+    text-align: justify;
+}
+
+.footer {
+    background-color: #EEEEEE;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.penn-logo {
+    height: 6em;
+    width: auto;
+}
+
+.pennmed-logo {
+    height: 5.75em;
+    width: auto;
+    padding-right: 15em;
+}
+
+.footy-cont {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+.twitter {
+    height: 3.625em;
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        transform: scale(0.45);  /* Adjust the scale factor as needed */
+        transform-origin: top left; /* Ensures the scale starts from the top-left corner */
+    }
+    header {
+        transform: scale(0.75);  /* Adjust the scale factor as needed */
+        transform-origin: top left; /* Ensures the scale starts from the top-left corner */
+    }
+}

@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+html, body {
+    position: absolute;
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
+}
+
+body p, ul, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+body ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.outside-container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.nav-bar-container {
+    padding: 2em 0em;
+}
+
+img.lab-logo {
+    height: 70px;
+    width: auto;
+}
+
+.home-link {
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+nav {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 5%;
+}
+
+.nav-bar-container ul li {
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.2em;
+}
+
+.nav-bar-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.current-tab {
+    color: #51D1E8;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    overflow: auto;
+    border: 1px solid #ddd; /* Add border for visibility */
+    background-color: #fff; /* Ensure dropdown background is white */
+}
+
+.drop-item-1 {
+    padding-top: 15px;
+}
+
+.drop-item-2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+a {
+    color: black;
+}
+
+.pi, .director {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.7em;
+    font-weight: 500;
+    color: #51D1E8;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    text-align: center; /* Ensure the title is centered */
+}
+
+.round-imgs {
+    width: 12.5em;
+    height: 12.5em;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto; /* Center the images */
+}
+
+.round-imgs img {
+    margin: 0 auto;
+    height: 135%;
+    width: auto;
+}
+
+.name {
+    font-size: 1.3em;
+    font-weight: 420;
+    color: black;
+    padding: 0.5% 0;
+    text-align: center; /* Center align name */
+}
+
+.analysts,
+.phds {
+    margin-top: 3%;
+    text-align: center; /* Center align titles and content */
+}
+
+.role {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #51D1E8;
+    margin-bottom: 1.5em;
+}
+
+/* Styling for team sections */
+.team-cont {
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-cont .name {
+    padding: 35px 0;
+}
+
+.drew-img {
+    margin: 0 auto;
+    height: 140% !important;
+    width: auto;
+}
+
+.yusuf-img {
+    margin: 0 auto;
+    height: 100% !important;
+    width: auto;
+}
+
+.footer {
+    margin-top: 5%;
+    background-color: #EEEEEE;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.penn-logo {
+    height: 6em;
+    width: auto;
+}
+
+.pennmed-logo {
+    height: 5.75em;
+    width: auto;
+    padding-right: 15em;
+}
+
+.footy-cont {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+.twitter {
+    height: 58px;
+    width: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+@media screen and (max-width: 768px) {
+    body, header {
+        transform: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .outside-container {
+        padding-left: 1em; /* Add padding to the left */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .container, .mission-block, .research-block, .featured-block, .news-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-bar-container ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-bar-container ul li {
+        padding: 1em 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2em;
+        margin: 5% 0;
+    }
+
+    .round-imgs {
+        width: 8em;
+        height: 8em;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+
+    .round-imgs img {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .name, .role {
+        text-align: center;
+    }
+
+    .team-cont {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5%;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 2em 5%;
+        width: 100%;
+    }
+
+    .pennmed-logo {
+        padding-right: 0;
+    }
+
+    .footy-cont {
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        left: 0;
+        right: 0;
+        width: auto;
+        min-width: 100%;
+        box-sizing: border-box;
+        position: static; /* Set position to static to prevent overflow */
+        background-color: #fff; /* Ensure dropdown background is white */
+        border: 1px solid #ddd; /* Add border for visibility */
+    }
+
+    .dropdown-content a {
+        text-align: center;
+        padding: 30px 0; /* Increase padding for better visibility */
+    }
+
+    .dropdown-content .drop-item-1, 
+    .dropdown-content .drop-item-2 {
+        padding: 30px 0; /* Ensure even padding for all items */
+    }
+}

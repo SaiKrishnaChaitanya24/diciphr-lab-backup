@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/reset.scss";
+@import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/layout.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body p, ul, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+body ul {
+    list-style-type: none;
+}
+
+.outside-container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+}
+
+.nav-bar-container {
+    padding: 2em 0em;
+}
+
+img.lab-logo {
+    height: 4.375em;
+    width: auto;
+}
+
+.home-link {
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+nav {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 5%;
+}
+
+.nav-bar-container ul li {
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.2em;
+}
+
+.nav-bar-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.current-tab {
+    color: #EB5347;
+}
+
+.block1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    flex-direction: row;
+    width: 100%;
+}
+
+.title-text {
+    padding: 0 5%;
+}
+
+.block1 .title-text .lab-name {
+    font-size: 3.5em;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 5%;
+    color: #39B7CD;
+}
+
+.motto-text {
+    font-size: 2em;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 5%;
+    color: #EB5347;
+    line-height: 1.5em;
+}
+
+.block1 img {
+    width: 100%;
+    max-width: 46.875em;
+    height: auto;
+    padding-top: 2%;
+}
+
+.mission-block {
+    margin-top: 2%;
+    background-color: #51D1E8;
+    display: flex;
+    align-items: center;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    text-align: center;
+    width: 100%;
+}
+
+.mission-title {
+    font-size: 2.7em;
+    font-weight: 550;
+    margin-left: 5%;
+    margin-right: 10%;
+    color: white;
+    padding-bottom: 1.6em;
+    border-bottom: 0.3125em solid white;
+}
+
+.mission-text {
+    margin-right: 10%;
+    font-size: 1.5em;
+    line-height: 1.8em;
+    color: white;
+    font-weight: 100;
+}
+
+.cloud img {
+    float: right;
+    width: 100%;
+    max-width: 9.375em;
+    height: auto;
+}
+
+.cloud {
+    padding-bottom: 2%;
+}
+
+.research-block {
+    background-color: white;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.research-title {
+    font-size: 2.7em;
+    font-weight: 550;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #51D1E8;
+    padding-bottom: 1.6em;
+    border-bottom: 0.3125em solid #51D1E8;
+}
+
+.research-block ul {
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.research-block li {
+    margin-left: 5%;
+    flex: 1 1 45%;
+    box-sizing: border-box;
+}
+
+.research-tiles {
+    height: 31.25em;
+    min-width: 18.125em;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    background-color: #FAFAFA;
+    text-align: center;
+    border-radius: 2.375em;
+}
+
+.button {
+    background-color: #EB5347;
+    border: none;
+    color: white;
+    padding: 0.9375em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.0em;
+    cursor: pointer;
+    border-radius: 1.875em;
+}
+
+.research-tiles h1 {
+    padding: 10% 5% 10% 5%;
+}
+
+.research-tiles img {
+    padding: 1.875em 0.3125em 1.875em 0.3125em;
+    height: 6.25em;
+}
+
+.research-tiles p {
+    padding: 0.9375em 1.25em 1.875em 1.25em;
+}
+
+.research-tiles button {
+    margin: 0.9375em 0.3125em 1.875em 0.3125em;
+}
+
+.featured-block {
+    margin-top: 5%;
+    background-color: #51D1E8;
+    display: flex;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+}
+
+.featured-title {
+    font-size: 2.7em;
+    font-weight: 550;
+    margin-left: 5%;
+    margin-right: 5%;
+    white-space: nowrap;
+    color: white;
+    padding-bottom: 0.625em;
+    border-bottom: 0.3125em solid white;
+}
+
+.news-imgs-cont {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0 5% 0 5%;
+}
+
+.news-imgs-cont img {
+    padding-left: 2%;
+    padding-right: 5%;
+}
+
+.news-imgs-cont .guardian {
+    max-width: 20.625em;
+    width: 100%;
+}
+
+.news-imgs-cont .cnn {
+    max-width: 9.375em;
+    width: 100%;
+}
+
+.news-imgs-cont .nyt {
+    max-width: 19.5625em;
+    width: 100%;
+}
+
+.news-imgs-cont .wsj {
+    max-width: 15.625em;
+    width: 100%;
+}
+
+.news-imgs-cont .forbes {
+    max-width: 15.625em;
+    width: 100%;
+}
+
+.news-imgs-cont .bbc {
+    max-width: 7.5em;
+    width: 100%;
+}
+
+.news-block {
+    margin-top: 5%;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    width: 100%;
+}
+
+.news-title {
+    font-size: 2.7em;
+    font-weight: 550;
+    margin-left: 5%;
+    margin-right: 5%;
+    white-space: nowrap;
+    text-align: center;
+    color: #51D1E8;
+    padding-bottom: 10px;
+    border-bottom: 5px solid #51D1E8;
+}
+
+.news-cont {
+    width: 100%;
+}
+
+.footer {
+    margin-top: 5%;
+    background-color: #EEEEEE;
+    height: 8.125em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.penn-logo {
+    height: 6em;
+    width: auto;
+}
+
+.pennmed-logo {
+    height: 5.75em;
+    width: auto;
+    padding-right: 15em;
+}
+
+.footy-cont {
+    display: flex;
+    align-items: center;
+}
+
+.footy-cont {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+.twitter {
+    height: 3.625em;
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    body, header {
+        transform: none;  /* Remove scaling */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .outside-container, .container, .mission-block, .research-block, .featured-block, .news-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .mission-title, .research-title {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-bar-container ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-bar-container ul li {
+        padding: 1em 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .job-desc {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .block1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .block1 img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        padding-top: 2%;
+        margin: 0;
+    }
+
+    .research-block ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .research-block li {
+        margin-left: 0;
+        margin-bottom: 1.5em;
+        width: 100%;
+    }
+
+    .research-tiles {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        height: auto;
+        width: 100%;
+        padding: 2%;
+        align-items: flex-start;
+        box-sizing: border-box;
+    }
+
+    .featured-block {
+        padding: 5%;
+    }
+
+    .news-imgs-cont {
+        flex-direction: column;
+        align-items: center;
+        padding: 2%;
+    }
+
+    .news-imgs-cont img {
+        width: 100%;
+        max-width: 10em;
+        height: auto;
+        margin: 1em 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 2em 5%;
+    }
+
+    .pennmed-logo {
+        padding-right: 0;
+    }
+
+    .footy-cont {
+        margin: 1em 0;
+        text-align: center;
+    }
+    .mission-text {
+        font-size: 1.2em;
+        line-height: 1.8em;
+        color: white;
+        font-weight: 100;
+    }
+    
+}

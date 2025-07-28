@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diciphr Website</title>
+    <link rel="icon" type="image/png" href="images/brain-logo.png" sizes="32x32">
+
+    <link rel="stylesheet" type="text/css" href="software_style.css">
+</head>
+<body>
+    <header>
+        <div class = 'outside-container'>
+            <div class = 'container'>
+                <div class ='nav-bar-container'>
+                    <nav>
+                        <a class ='home-link' href="index.html"> <img src="images/logo_color.png" class="lab-logo"> </a>
+                        <ul>
+                            <li> <a href="research.html">Research</a>
+                            <li><a  href="team.html">  Team </a></li>
+                            <li><a href="publications.html">Publications </a></li>
+                            <li><a href="software.html"> <div class='current-tab'>Software</div> </a></li>
+                            <li><a href="Events.html">Events</a></li>
+                            <li><a href="join.html"> Join </a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class = 'outside-container'>   
+        <div class= 'flex-wrapper'>
+        <div class = 'container'>
+
+
+     
+                <div class ='big-title'> Software </div>
+    
+        <div class = 'all-cards'>
+
+                <div class='software-card' >
+                    <div class='box'>
+                        <div class = 'title'><b>FERNET</b> </div>
+                        <div class = 'summary' > Free Water Estimation and Elimination </div> 
+                        
+                        <div class='row'>
+                           
+                                <div class='left-column'>
+                                    <div class ='square-imgs'><img src='publications/parker-plos/pone.0233645.g006.jpg'></div>
+                                </div>
+
+                                
+                                <div class='right-column'>
+                                    <div class = 'developer-title'> Developed By:</div>                      
+                                    <div class = 'author'><div class='round-imgs-small zoom-out'><img class='y' src='images/Headshots/Drew.jpg'></div>
+                                    <div class = 'developer-name'>Drew Parker</div></div>
+                                    <div class = 'author'><div class='round-imgs-small zoom-out'><img class='y' src='images/Headshots/Aziz.jpg'></div>
+                                    <div class = 'developer-name'>Aziz Ismail</div></div>
+                                </div>
+                                
+                            
+                        </div>
+
+                            <div class = 'download'><a class="download-button" href="https://github.com/DiCIPHR-Lab/Fernet" target="_blank">GitHub</a> </div>
+                            <div class = 'paper'>
+                                <button class="paper-button" onclick="window.open('https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0233645', '_blank')"> Paper</button> 
+                            </div>
+                            <div class = 'text'><input type='hidden' value="Parker, Drew, Aziz Ismail, et al. 'Free Water Estimation and Elimination in MRI.'" id="FernetInput"></div>
+                            <div class = 'citation'><button class="download-button" onclick="copyFernetCitation()">Cite</button></div>
+                            <script>
+                                function copyFernetCitation() {
+                                    var copyText = document.getElementById("FernetInput");
+                                    copyText.type = 'text';
+                                    copyText.select();
+                                    document.execCommand("copy");
+                                    copyText.type = 'hidden';
+                                    alert("Copied to clipboard!");
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <div class='software-card' >
+                    <div class='box'>
+                        <div class = 'title'><b>3D-QCNet</b></div>
+                        <div class = 'summary' > Automated Artifact Detection in Diffusion MRI images </div>
+
+                        <div class='row'>
+                            <div class='column'>
+                                <div class='left-column'>
+                                    <div class = 'square-imgs'><img src='images/pubs/classification-imgs-v3.png'></div>
+                                  
+                                </div>
+                            </div>
+                            <div class='column'>
+                                <div class='right-column'>
+                                    <div class = 'developer-title'> Developed By:</div>
+                                    <div class = 'author'><div class='round-imgs-small'><img class='y' src='images/Headshots/adnan.jpg'></div>
+                                    <div class = 'developer-name'>Adnan Ahmad</div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = 'download'><a class="download-button" href="https://github.com/Cranxter/3D-QCNet" target="_blank">GitHub</a> </div>
+                        <div class = 'paper'>
+                            <button class="paper-button" onclick="window.open('https://arxiv.org/abs/2103.05285', '_blank')"> Paper</button> 
+                        </div>
+                        <div class = 'text'><input type='hidden' value="Ahmad, Adnan, Drew Parker, Zahra Riahi Samani, and Ragini Verma. '3D-Qcnet -- a Pipeline for Automated Artifact Detection in Diffusion Mri Images.' ArXiv.org. 09 Mar. 2021. Web." id="QCNetInput"></div>                      
+                        <div class = 'citation'><button class="download-button" onclick="copyQCNetCitation()">Cite</button></div>
+                            <script>
+                                function copyQCNetCitation() {
+                                    var copyText = document.getElementById("QCNetInput");
+                                    copyText.type = 'text';
+                                    copyText.select();
+                                    document.execCommand("copy");
+                                    copyText.type = 'hidden';
+                                    alert("Copied to clipboard!");
+                                }
+                            </script>  
+                    </div>
+                </div>
+                </div>
+            </div>
+                
+            <div class='footer'>
+                <a href = "https://www.upenn.edu/"><img class='penn-logo' src ='images/social-media-icons/pennLogo.png'></a>
+                <a href = "https://www.med.upenn.edu/"><img class='pennmed-logo' src ='images/social-media-icons/psom.png'></a>   
+                <div class='footy-cont'>
+                    <img class='twitter' src="images/social-media-icons/black-and-white-twitter-icon-3.jpg"><a href = "https://twitter.com/DiCIPHR" style="text-decoration: none; color: black;">Twitter </a>
+                </div>
+            </div>
+            </div>
+    
+        </div> 
+    
+
+</body>
+</html>
