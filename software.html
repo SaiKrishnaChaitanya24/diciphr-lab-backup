@@ -121,6 +121,47 @@
                             </script>  
                     </div>
                 </div>
+                <div class='software-card' >
+                    <div class='box'>
+                        <div class = 'title'><b>FERNET</b> </div>
+                        <div class = 'summary' > Free Water Estimation and Elimination </div> 
+                        
+                        <div class='row'>
+                           
+                                <div class='left-column'>
+                                    <div class ='square-imgs'><img src='publications/parker-plos/pone.0233645.g006.jpg'></div>
+                                </div>
+
+                                
+                                <div class='right-column'>
+                                    <div class = 'developer-title'> Developed By:</div>                      
+                                    <div class = 'author'><div class='round-imgs-small zoom-out'><img class='y' src='images/Headshots/Drew.jpg'></div>
+                                    <div class = 'developer-name'>Drew Parker</div></div>
+                                    <div class = 'author'><div class='round-imgs-small zoom-out'><img class='y' src='images/Headshots/Aziz.jpg'></div>
+                                    <div class = 'developer-name'>Aziz Ismail</div></div>
+                                </div>
+                                
+                            
+                        </div>
+
+                            <div class = 'download'><a class="download-button" href="https://github.com/DiCIPHR-Lab/Fernet" target="_blank">GitHub</a> </div>
+                            <div class = 'paper'>
+                                <button class="paper-button" onclick="window.open('https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0233645', '_blank')"> Paper</button> 
+                            </div>
+                            <div class = 'text'><input type='hidden' value="Parker, Drew, Aziz Ismail, et al. 'Free Water Estimation and Elimination in MRI.'" id="FernetInput"></div>
+                            <div class = 'citation'><button class="download-button" onclick="copyFernetCitation()">Cite</button></div>
+                            <script>
+                                function copyFernetCitation() {
+                                    var copyText = document.getElementById("FernetInput");
+                                    copyText.type = 'text';
+                                    copyText.select();
+                                    document.execCommand("copy");
+                                    copyText.type = 'hidden';
+                                    alert("Copied to clipboard!");
+                                }
+                            </script>
+                    </div>
+                </div>
                 </div>
             </div>
                 
