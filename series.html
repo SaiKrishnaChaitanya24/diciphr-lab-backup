@@ -301,20 +301,19 @@
             const totalDays = new Date(year, month + 1, 0).getDate();
 
             calendarDaysElement.innerHTML = `
+                <div class="day-name">Sun</div>
                 <div class="day-name">Mon</div>
                 <div class="day-name">Tue</div>
                 <div class="day-name">Wed</div>
                 <div class="day-name">Thu</div>
                 <div class="day-name">Fri</div>
                 <div class="day-name">Sat</div>
-                <div class="day-name">Sun</div>
             `;
 
-            let dayOffset = (firstDay + 6) % 7;
+            let dayOffset = firstDay; // Sunday start means offset is directly the getDay() result
             for (let i = 0; i < dayOffset; i++) {
                 calendarDaysElement.innerHTML += '<div></div>';
             }
-
             for (let day = 1; day <= totalDays; day++) {
                 const dayDiv = document.createElement('div');
                 dayDiv.textContent = day;
