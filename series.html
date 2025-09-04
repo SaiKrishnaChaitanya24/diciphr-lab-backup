@@ -7,54 +7,64 @@
     <link rel="icon" type="image/png" href="images/brain-logo.png" sizes="32x32" />
     <link rel="stylesheet" type="text/css" href="Events_style.css" />
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
         .calendar-and-schedule {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            max-width: 80%;
-            margin: auto;
+            max-width: 90%;
+            margin: 2em auto;
+            gap: 2em;
         }
 
-        .calendar-container {
+        .calendar-container,
+        .schedule-container {
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            margin: 2em;
-            max-width: 55%;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 1em;
+            flex: 1 1 100%;
+            max-width: 100%;
         }
 
         .calendar-header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            margin-bottom: 2em;
+            gap: 0.75em;
+            margin-bottom: 1em;
         }
 
         .calendar-header button,
         .calendar-header select {
-            margin: 0 10px;
-            padding: 0.75em 1.5em;
-            font-size: 1.1em;
-            cursor: pointer;
+            padding: 0.6em 1em;
+            font-size: 1em;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #f4f4f4;
+            cursor: pointer;
         }
 
         .calendar-days {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            grid-gap: 5px;
+            gap: 5px;
             text-align: center;
         }
 
         .calendar-days div {
-            padding: 1.5em;
-            font-size: 1.3em;
+            padding: 1.2em;
+            font-size: 1em;
             background-color: #f4f4f4;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -69,27 +79,17 @@
         .day-name {
             font-weight: bold;
             background-color: #f0f0f0;
-            padding: 1em 0;
         }
 
         .selected {
-            background-color: lightgreen;
+            background-color: lightgreen !important;
             color: white;
         }
 
         #selectedDate {
-            margin-top: 2em;
-            font-size: 1.3em;
+            margin-top: 1em;
+            font-size: 1.2em;
             text-align: center;
-        }
-
-        .schedule-container {
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 2em;
-            max-width: 40%;
-            flex-grow: 1;
         }
 
         .schedule-container h2 {
@@ -101,6 +101,7 @@
         #scheduleList {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         #scheduleList li {
@@ -112,21 +113,13 @@
             border-bottom: none;
         }
 
-        #scheduleList li span {
-            display: block;
-            font-size: 0.9em;
-            color: #555;
-        }
-
         .seminar-description {
-            max-width: 80%;
+            max-width: 90%;
             margin: 2em auto;
             background-color: #eef9fb;
             padding: 1.5em 2em;
             border-radius: 10px;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
             color: #333;
         }
 
@@ -144,9 +137,61 @@
             font-weight: bold;
             text-decoration: underline;
         }
+
+        .footer {
+            text-align: center;
+            margin-top: 3em;
+            padding: 2em 1em;
+            background-color: #f0f0f0;
+        }
+
+        .footer img {
+            height: 40px;
+            margin: 0 10px;
+        }
+
+        .footy-cont {
+            margin-top: 1em;
+        }
+
+        @media (min-width: 768px) {
+            .calendar-container {
+                flex: 1 1 58%;
+                max-width: 58%;
+            }
+
+            .schedule-container {
+                flex: 1 1 38%;
+                max-width: 38%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .calendar-header {
+                flex-direction: column;
+            }
+
+            .calendar-header button,
+            .calendar-header select {
+                width: 100%;
+                margin-bottom: 0.5em;
+            }
+
+            .calendar-days div {
+                padding: 1em;
+                font-size: 0.9em;
+            }
+
+            .seminar-description {
+                padding: 1em;
+                font-size: 0.95em;
+            }
+        }
     </style>
 </head>
+
 <body>
+    <!-- HEADER -->
     <header>
         <div class="outside-container">
             <div class="container">
@@ -169,31 +214,26 @@
         </div>
     </header>
 
+    <!-- SEMINAR DESCRIPTION -->
     <section class="seminar-description">
         <p>📢 <strong>Introducing the Radiology Translation & Commercialization Seminar Series</strong></p>
         <p>🗓 Every Second Monday | 🕛 12–1 PM | (unless noted otherwise)</p>
         <p><strong>📍 Dulles-Grice Auditorium (formerly Donner Grice)</strong></p>
 
         <p><strong>🧭 How to get there:</strong></p>
-        <p>Follow these steps once you're inside the main hospital building:</p>
-
         <ol>
             <li>Enter through the main entrance at <strong>3400 Spruce Street</strong>.</li>
             <li>Pass through the security checkpoint.</li>
             <li>Take the escalator up one level.</li>
-            <li>At the top, make a hard right turn — the gift shop will be on your right.</li>
-            <li>Walk to the end of the hallway and turn left.</li>
-            <li>You’ll pass the <strong>Chapel</strong> and the <strong>Food Bank</strong> on your left.</li>
-            <li>Look for a bank of elevators on the left-hand side.</li>
+            <li>Turn right at the top — the gift shop will be on your right.</li>
+            <li>Walk to the end and turn left.</li>
+            <li>Pass the <strong>Chapel</strong> and <strong>Food Bank</strong> on your left.</li>
             <li>Take the elevator to the <strong>2nd floor</strong>.</li>
-            <li>Exit the elevator and turn right.</li>
-            <li>Halfway down the hall, look for signage for <strong>Dulles/Grice Auditorium</strong>.</li>
+            <li>Exit and turn right — signage will point to <strong>Dulles/Grice Auditorium</strong>.</li>
         </ol>
+
         <p>
-            We’re excited to launch a new Translation & Commercialization Seminar Series, as a space to explore how our research can make real-world impact through clinical translation, commercialization, and collaboration.
-        </p>
-        <p>
-            <strong> What to expect:</strong> Each month, we will host expert speakers offering diverse perspectives on the many facets of translation, from forming startups, to navigating IP, industry partnerships, funding pathways, and workflow integration. Whether you're just curious or already exploring partnerships, this series is for you. We encourage you to join us in person, engage with the speaker, and be part of the conversation shaping the future of translation and commercialization at Penn.
+            This series is designed to explore how research translates into real-world clinical and commercial impact. Each month, expert speakers will discuss topics such as startups, intellectual property, partnerships, and innovation workflows. Join us in person to engage and contribute.
         </p>
 
         <p>
@@ -202,14 +242,11 @@
               Join the meeting now
             </a>
         </p>
-        <div style="font-size: 0.95em; color: #555; margin-top: 0.5em; line-height: 1.4;">
-            <p><strong>Meeting ID:  244 572 234 755 6</strong></p> 
-        </div>
-        <div style="font-size: 0.95em; color: #555; margin-top: 0.5em; line-height: 1.4;">
-            <p><strong>Passcode: E64Be947</strong></p> 
-        </div>
+        <p><strong>Meeting ID:</strong> 244 572 234 755 6</p> 
+        <p><strong>Passcode:</strong> E64Be947</p> 
     </section>
 
+    <!-- CALENDAR + SCHEDULE -->
     <div class="calendar-and-schedule">
         <div class="calendar-container">
             <div class="calendar-header">
@@ -217,7 +254,6 @@
                 <h2 id="monthYear">January 2025</h2>
                 <button class="next-btn">Next</button>
                 <select id="monthSelect">
-                    <!-- months here -->
                     <option value="0">January</option>
                     <option value="1">February</option>
                     <option value="2">March</option>
@@ -237,16 +273,8 @@
                     <option value="2027">2027</option>
                 </select>
             </div>
-            <div class="calendar-days">
-                <div class="day-name">Mon</div>
-                <div class="day-name">Tue</div>
-                <div class="day-name">Wed</div>
-                <div class="day-name">Thu</div>
-                <div class="day-name">Fri</div>
-                <div class="day-name">Sat</div>
-                <div class="day-name">Sun</div>
-            </div>
-            <div id="selectedDate" class="sub-title">Selected Date: None</div>
+            <div class="calendar-days" id="calendarDays"></div>
+            <div id="selectedDate">Selected Date: None</div>
         </div>
 
         <div class="schedule-container">
@@ -255,14 +283,17 @@
         </div>
     </div>
 
-    <div class='footer'>
-        <a href = "https://www.upenn.edu/"><img class='penn-logo' src ='images/social-media-icons/pennLogo.png'></a>
-        <a href = "https://www.med.upenn.edu/"><img class='pennmed-logo' src ='images/social-media-icons/psom.png'></a>   
-        <div class='footy-cont'>
-            <img class='twitter' src="images/social-media-icons/black-and-white-twitter-icon-3.jpg"><a href = "https://twitter.com/DiCIPHR" style="text-decoration: none; color: black;">Twitter </a>
+    <!-- FOOTER -->
+    <div class="footer">
+        <a href="https://www.upenn.edu/"><img class="penn-logo" src="images/social-media-icons/pennLogo.png"></a>
+        <a href="https://www.med.upenn.edu/"><img class="pennmed-logo" src="images/social-media-icons/psom.png"></a>
+        <div class="footy-cont">
+            <img class="twitter" src="images/social-media-icons/black-and-white-twitter-icon-3.jpg">
+            <a href="https://twitter.com/DiCIPHR" style="text-decoration: none; color: black;">Twitter</a>
         </div>
     </div>
 
+    <!-- SCRIPTS -->
     <script>
         let currentDate = new Date();
 
@@ -278,9 +309,10 @@
             const month = currentDate.getMonth();
             const year = currentDate.getFullYear();
             const monthYearElement = document.getElementById("monthYear");
-            const calendarDaysElement = document.querySelector(".calendar-days");
+            const calendarDaysElement = document.getElementById("calendarDays");
 
             monthYearElement.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+
             const firstDay = new Date(year, month, 1).getDay();
             const totalDays = new Date(year, month + 1, 0).getDate();
 
@@ -294,7 +326,7 @@
                 <div class="day-name">Sun</div>
             `;
 
-            let dayOffset = (firstDay + 6) % 7; // Adjust to start with Monday
+            let dayOffset = (firstDay + 6) % 7;
             for (let i = 0; i < dayOffset; i++) {
                 calendarDaysElement.innerHTML += '<div></div>';
             }
@@ -313,11 +345,10 @@
         function selectDate(day) {
             const selectedDateElement = document.getElementById("selectedDate");
             selectedDateElement.textContent = `Selected Date: ${day} ${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}`;
-            const allDays = document.querySelectorAll('.day');
-            allDays.forEach(dayDiv => dayDiv.classList.remove('selected'));
-            allDays.forEach(dayDiv => {
-                if (parseInt(dayDiv.textContent) === parseInt(day)) {
-                    dayDiv.classList.add('selected');
+            document.querySelectorAll('.day').forEach(d => d.classList.remove('selected'));
+            document.querySelectorAll('.day').forEach(d => {
+                if (parseInt(d.textContent) === parseInt(day)) {
+                    d.classList.add('selected');
                 }
             });
         }
@@ -330,13 +361,13 @@
             schedule.forEach(event => {
                 const [start, end] = parseDateRange(event.dateRange);
                 if (start && start.getMonth() === month && start.getFullYear() === year) {
-                    for (let i = 0; i < allDays.length; i++) {
-                        const dayNum = parseInt(allDays[i].textContent);
+                    allDays.forEach(dayDiv => {
+                        const dayNum = parseInt(dayDiv.textContent);
                         const date = new Date(year, month, dayNum);
                         if (date >= start && date <= end) {
-                            allDays[i].style.backgroundColor = event.color;
+                            dayDiv.style.backgroundColor = event.color;
                         }
-                    }
+                    });
                 }
             });
         }
