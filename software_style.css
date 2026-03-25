@@ -3,11 +3,10 @@
 @import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/layout.scss";
 
 html, body {
-    position: absolute;
     padding-left: 0;
     margin: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     font-family: 'DM Sans', sans-serif;
     font-weight: 100;
 }
@@ -28,16 +27,14 @@ a {
 .outside-container {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
 }
 
 .container {
     margin: 0 auto;
     padding: 0;
-    height: auto;
     width: 100%;
-    max-width: 1920px;
+    max-width: 1400px;
 }
 
 .nav-bar-container {
@@ -86,18 +83,18 @@ nav ul {
     font-size: 3em;
     color: #39B7CD;
     font-weight: 500;
-    margin-left: 5%;
-    margin-bottom: 7%;
+    margin-bottom: 4%;
     text-align: center;
 }
 
-/* Updated section for 2 cards per row */
 .all-cards {
-    margin-top: 4%;
+    margin-top: 2%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    padding: 0 20px 40px;
+    box-sizing: border-box;
 }
 
 .software-card {
@@ -108,21 +105,20 @@ nav ul {
 }
 
 .box {
-    position: static;
-    margin: 0;
-    margin-bottom: 50px;
     background-color: #FCFCFC;
-    height: 400px;
-    width: 450px;
+    min-height: 430px;
+    width: 100%;
+    max-width: 520px;
     border-radius: 44px;
-    padding: 25px 50px;
+    padding: 25px 30px 30px;
     text-align: center;
     box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 .title {
     text-align: center;
-    margin: 0px 30px;
+    margin: 0 30px;
     color: #000000;
     font-size: 1.1em;
     font-weight: 500;
@@ -130,44 +126,44 @@ nav ul {
 
 .summary {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
 .row {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
     width: 100%;
-    justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
+.left-column,
+.right-column {
     flex: 1;
 }
 
 .right-column {
-    height: 0px;
-}
-
-.left-column {
-    height: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .developer-title {
-    margin-left: 300px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .author {
-    margin-top: 20px;
-    margin-left: 325px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 6px;
     font-weight: 500;
+    display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .round-imgs-small {
@@ -175,37 +171,59 @@ nav ul {
     height: 55px;
     overflow: hidden;
     border-radius: 50%;
-}
-
-.zoom-out img {
-    margin: 0 auto;
-    height: 125%;
-    width: auto;
-    margin-right: 300px;
+    flex-shrink: 0;
 }
 
 .round-imgs-small img {
-    margin: 0 auto;
-    height: 135%;
-    width: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zoom-out img {
+    transform: scale(1.05);
 }
 
 .developer-name {
-    padding-top: 5%;
+    padding-top: 0;
+    text-align: left;
 }
 
-.download {
-    padding-right: 50px;
+.text {
+    display: none;
 }
 
-.download-button {
-    margin-top: 270px;
-    margin-right: 25px;
-    margin-left: 25px;
-    background-color: #39b7cd;
+.square-imgs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square-imgs img {
+    max-width: 100%;
+    max-height: 210px;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.download-button,
+.paper-button,
+.cite-button {
+    margin: 0;
     border: none;
-    color: #ffffff;
-    padding: 10px 30px;
+    padding: 10px 26px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -213,47 +231,28 @@ nav ul {
     border-radius: 30px;
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
-    float: left;
+    display: inline-block;
 }
 
-.paper {
-    text-align: right;
-    padding-right: 35%;
+.download-button,
+.cite-button {
+    background-color: #39b7cd;
+    color: #ffffff;
 }
 
 .paper-button {
-    margin-top: 270px;
     background-color: #F5F5F5;
-    border: none;
     color: #39b7cd;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 30px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    float: left;
 }
 
-.citation-button {
-    cursor: pointer;
+.download-button:hover,
+.cite-button:hover,
+.paper-button:hover {
+    opacity: 0.9;
 }
 
 .img-cont {
     width: 45%;
-}
-
-.square-imgs {
-    margin-right: 300px;
-    width: 40%;
-}
-
-.square-imgs img {
-    margin: 0 auto;
-    height: 250px;
-    width: auto;
 }
 
 .round-imgs {
@@ -285,19 +284,20 @@ nav ul {
     font-size: 2.2em;
     right: 50%;
     bottom: 50%;
-    transform: translate(50%,50%);
+    transform: translate(50%, 50%);
     position: absolute;
 }
 
 .footer {
     margin-top: 5%;
     background-color: #EEEEEE;
-    height: 130px;
+    min-height: 130px;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: space-between;
     padding: 0 5%;
+    box-sizing: border-box;
 }
 
 .penn-logo {
@@ -333,6 +333,16 @@ nav ul {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 1024px) {
+    .software-card {
+        flex: 0 1 100%;
+    }
+
+    .box {
+        max-width: 700px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     body, header {
         transform: none;
@@ -363,10 +373,20 @@ nav ul {
         align-items: center;
     }
 
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .home-link {
+        margin: 0;
+    }
+
     .nav-bar-container ul {
         flex-direction: column;
         align-items: center;
         padding: 0;
+        margin-right: 0;
     }
 
     .nav-bar-container ul li {
@@ -384,26 +404,37 @@ nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0 15px 30px;
     }
 
     .software-card {
         flex: 0 1 100%;
+        width: 100%;
     }
 
     .box {
-        width: 90%;
-        max-width: 450px;
-        margin: 0 0 30px 0;
-        padding: 1.5em;
+        width: 100%;
+        padding: 20px;
+        min-height: auto;
     }
 
     .row {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
-    .column {
-        width: 100%;
+    .right-column {
+        align-items: center;
+    }
+
+    .developer-title,
+    .developer-name {
+        text-align: center;
+    }
+
+    .author {
+        justify-content: center;
     }
 
     .round-imgs {
@@ -425,6 +456,7 @@ nav ul {
         flex-direction: column;
         height: auto;
         padding: 2em 5%;
+        gap: 20px;
     }
 
     .pennmed-logo {
@@ -434,17 +466,6 @@ nav ul {
     .footy-cont {
         margin: 1em 0;
         text-align: center;
-    }
-
-    .right-column {
-        padding-top: 2em;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .right-column .author {
-        margin-bottom: 1em;
-        padding-top: 2em;
     }
 
     .img-spacing {
