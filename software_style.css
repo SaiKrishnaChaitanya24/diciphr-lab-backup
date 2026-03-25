@@ -32,15 +32,6 @@ a {
     width: 100%;
 }
 
-
-.software-card {
-    flex: 0 1 calc(50% - 30px);
-    max-width: calc(50% - 30px);
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
 .container {
     margin: 0 auto;
     padding: 0;
@@ -100,16 +91,31 @@ nav ul {
     text-align: center;
 }
 
+/* Updated section for 2 cards per row */
+.all-cards {
+    margin-top: 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.software-card {
+    flex: 0 1 calc(50% - 30px);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
 .box {
     position: static;
-    margin-left: 0;
-    margin-bottom: 0;
+    margin: 0;
+    margin-bottom: 50px;
     background-color: #FCFCFC;
     height: 400px;
-    width: 100%;
-    max-width: 450px;
+    width: 450px;
     border-radius: 44px;
-    padding: 25px 30px;
+    padding: 25px 50px;
     text-align: center;
     box-sizing: border-box;
 }
@@ -176,6 +182,12 @@ nav ul {
     height: 125%;
     width: auto;
     margin-right: 300px;
+}
+
+.round-imgs-small img {
+    margin: 0 auto;
+    height: 135%;
+    width: auto;
 }
 
 .developer-name {
@@ -269,12 +281,6 @@ nav ul {
     justify-content: space-around;
 }
 
-.round-imgs-small img {
-    margin: 0 auto;
-    height: 135%;
-    width: auto;
-}
-
 .main-text {
     font-size: 2.2em;
     right: 50%;
@@ -308,9 +314,6 @@ nav ul {
 .footy-cont {
     display: flex;
     align-items: center;
-}
-
-.footy-cont {
     font-size: 1.1em;
     font-weight: 600;
     margin-right: 5%;
@@ -339,19 +342,20 @@ nav ul {
         align-items: center;
     }
 
-    .outside-container, .container, .mission-block, .research-block, .featured-block, .news-block {
+    .outside-container,
+    .container,
+    .mission-block,
+    .research-block,
+    .featured-block,
+    .news-block {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
 
-    .software-card {
-        flex: 0 1 100%;
-        max-width: 100%;
-    }
-    
-    .mission-title, .research-title {
+    .mission-title,
+    .research-title {
         text-align: center;
         width: 100%;
         display: flex;
@@ -377,19 +381,20 @@ nav ul {
     }
 
     .all-cards {
-        margin-top: 4%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .software-card {
+        flex: 0 1 100%;
     }
 
     .box {
-        width: 70%;
-        /*margin: 10px 0;*/
-        padding-left: 7.5em; /* Add padding to the left side of the box */
-        padding-top: 1em;
-        padding-bottom: 1em;
+        width: 90%;
+        max-width: 450px;
+        margin: 0 0 30px 0;
+        padding: 1.5em;
     }
 
     .row {
@@ -431,8 +436,18 @@ nav ul {
         text-align: center;
     }
 
-    /* Add styles for .right-column to center Adnan's photo */ 
-    .right-column { padding-top: 2em; align-items: center; /* Center items horizontally */ justify-content: center; /* Center items vertically */ } 
-    .right-column .author { margin-bottom: 1em; padding-top: 2em; }
-    .img-spacing { padding-left: 2em; /* Add margin to the left */ }
+    .right-column {
+        padding-top: 2em;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right-column .author {
+        margin-bottom: 1em;
+        padding-top: 2em;
+    }
+
+    .img-spacing {
+        padding-left: 2em;
+    }
 }
