@@ -1,23 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 @import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/reset.scss";
 @import "http://diciphr-website.s3-website-us-east-1.amazonaws.com/compass/layout.scss";
- 
-html, body {
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
     position: relative;
     padding-left: 0;
     margin: 0;
     width: 100%;
     font-family: 'DM Sans', sans-serif;
     font-weight: 100;
+    background-color: #fafafa;
 }
 
-body p, ul, h1 {
+body p,
+ul,
+h1 {
     margin: 0;
     padding: 0;
 }
 
 body ul {
     list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #39B7CD;
 }
 
 .outside-container {
@@ -69,7 +82,8 @@ nav ul {
 }
 
 .current-tab {
-    color: #51D1E8;
+    color: #51D1E8 !important;
+    font-weight: 700;
 }
 
 .title-join {
@@ -88,15 +102,315 @@ nav ul {
     line-height: 1.8em;
 }
 
-a {
-    text-decoration: none;
-    color: #39B7CD;
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.title {
+    margin-top: 3%;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 550;
+    color: rgb(81, 209, 232);
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+/* Seminar description section */
+.seminar-description {
+    max-width: 90%;
+    margin: 2em auto;
+    background-color: #eef9fb;
+    padding: 2.2em 2.4em;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.seminar-main-heading {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    color: #51D1E8;
+    margin: 0 0 1em 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+.seminar-overview {
+    margin-bottom: 2em;
+}
+
+.seminar-overview p {
+    margin-bottom: 1.15em;
+    font-size: 1.08rem;
+    line-height: 1.85;
+}
+
+.seminar-details {
+    border-top: 1px solid rgba(81, 209, 232, 0.25);
+    padding-top: 1.5em;
+}
+
+.seminar-details p {
+    margin-bottom: 1em;
+    line-height: 1.75;
+    font-size: 1.02rem;
+}
+
+.detail-line {
+    font-size: 1.08rem;
+}
+
+.directions-block {
+    margin: 1.25em 0 1.5em 0;
+}
+
+.directions-block ol {
+    margin: 0.75em 0 0 1.5em;
+    padding-left: 1.2em;
+    line-height: 1.9;
+}
+
+.directions-block li {
+    margin-bottom: 0.35em;
+}
+
+.meeting-block {
+    margin-top: 1.5em;
+    padding-top: 1em;
+    border-top: 1px dashed rgba(81, 209, 232, 0.35);
+}
+
+.seminar-description a.join-link {
+    color: #51D1E8;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.05rem;
+}
+
+/* Calendar and schedule */
+.calendar-and-schedule {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: 2em auto;
+    gap: 2em;
+}
+
+.calendar-container,
+.schedule-container {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 1.25em;
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.calendar-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75em;
+    margin-bottom: 1em;
+}
+
+.calendar-header button,
+.calendar-header select {
+    padding: 0.6em 1em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-days div {
+    padding: 1.2em;
+    font-size: 1em;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.15s;
+}
+
+.calendar-days div:hover {
+    background-color: #ddd;
+    transform: translateY(-1px);
+}
+
+.day-name {
+    font-weight: bold;
+    background-color: #f0f0f0 !important;
+    cursor: default !important;
+}
+
+.selected {
+    background-color: lightgreen !important;
+    color: white;
+}
+
+#selectedDate {
+    margin-top: 1em;
+    font-size: 1.1em;
+    text-align: center;
+    color: #333;
+}
+
+.schedule-container h2 {
+    text-align: center;
+    color: #51D1E8;
+    margin: 0 0 1em 0;
+    font-size: 1.7rem;
+}
+
+#scheduleList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#scheduleList li {
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.7;
+}
+
+#scheduleList li:last-child {
+    border-bottom: none;
+}
+
+.schedule-link {
+    color: #39B7CD;
+    text-decoration: underline;
+}
+
+/* Separator */
+.section-separator {
+    text-align: center;
+    margin: 4em auto 1.5em;
+    max-width: 900px;
+}
+
+.separator-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #51D1E8;
+    margin: 0.5em 0;
+    letter-spacing: 0.5px;
+}
+
+.separator-line {
+    height: 3px;
+    background: linear-gradient(to right, transparent, #51D1E8, transparent);
+    margin: 0.2em auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Recordings section */
+.recordings-intro {
+    max-width: 90%;
+    margin: 0 auto 1.5em;
+    background-color: #e8f8fb;
+    padding: 1.75em 2em;
+    border-radius: 12px;
+    border-left: 6px solid #51D1E8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    color: #333;
+}
+
+.recordings-intro p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.recordings-list {
+    max-width: 90%;
+    margin: 0 auto 3em;
+}
+
+.talk-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5em;
+    margin-bottom: 1.75em;
+    border-top: 4px solid #51D1E8;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.talk-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.talk-card h3 {
+    margin: 0 0 0.4em 0;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.talk-meta {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 0.9em;
+    line-height: 1.7;
+}
+
+.talk-video {
+    margin-bottom: 1em;
+}
+
+.talk-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 8px;
+}
+
+.slides-links a {
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.5em 1em;
+    background-color: #51D1E8;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.slides-links a:hover {
+    background-color: #3bbad0;
+}
+
+/* Footer */
 .footer {
     margin-top: 5%;
     background-color: #EEEEEE;
-    height: 130px;
+    min-height: 130px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -130,29 +444,27 @@ a {
     padding-right: 3%;
 }
 
-.flex-wrapper {
-    display: flex;
-    min-height: 90vh;
-    flex-direction: column;
-    justify-content: space-between;
+/* Equal width on desktop */
+@media (min-width: 768px) {
+    .calendar-container,
+    .schedule-container {
+        flex: 1 1 calc(50% - 1em);
+        max-width: calc(50% - 1em);
+    }
 }
 
-.title {
-    margin-top: 3%;
-    text-align: center;
-    font-size: 3em;
-    font-weight: 550;
-    color: rgb(81, 209, 232);
-    padding-top: 2%;
-    padding-bottom: 5%;
-}
-
-
+/* Tablet / Mobile */
 @media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1em;
+    }
+
     .nav-bar-container ul {
         flex-direction: column;
         align-items: center;
         padding: 0;
+        margin-right: 0;
     }
 
     .nav-bar-container ul li {
@@ -161,8 +473,9 @@ a {
         width: 100%;
     }
 
-    .home-link, .lab-logo {
-        margin: 0 auto; /* Center the logo */
+    .home-link,
+    .lab-logo {
+        margin: 0 auto;
     }
 
     .job-desc {
@@ -174,18 +487,81 @@ a {
         flex-direction: column;
         height: auto;
         padding: 1em 5%;
+        gap: 1em;
     }
 
     .pennmed-logo {
         padding-right: 0;
     }
-    .calendar-container { 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: scale(0.60); /* Scale down to 75% */ 
-        transform-origin: top center; /* Ensure scaling starts from the top-left corner */ 
-        background-color: transparent; /* Remove the background color */ 
-        box-shadow: none; /* Remove the box shadow */
+
+    .calendar-container {
+        transform: scale(0.92);
+        transform-origin: top center;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 600px) {
+    .seminar-description {
+        padding: 1.25em;
+    }
+
+    .seminar-main-heading {
+        font-size: 1.75rem;
+    }
+
+    .seminar-overview p,
+    .seminar-details p,
+    .directions-block ol {
+        font-size: 1rem;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+    }
+
+    .calendar-header button,
+    .calendar-header select {
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+
+    .calendar-days div {
+        padding: 1em;
+        font-size: 0.9em;
+    }
+
+    .section-separator {
+        margin: 3em auto 1em;
+    }
+
+    .separator-title {
+        font-size: 1.6rem;
+    }
+
+    .recordings-intro {
+        padding: 1.25em;
+    }
+
+    .talk-card {
+        padding: 1.1em;
+    }
+
+    .footer {
+        padding: 1.25em 5%;
+    }
+
+    .penn-logo,
+    .pennmed-logo {
+        height: 4.5em;
+    }
+
+    .footy-cont {
+        margin-right: 0;
+    }
+
+    .calendar-container {
+        transform: scale(1);
     }
 }
