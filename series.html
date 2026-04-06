@@ -291,6 +291,33 @@
                 dateLabel: "November 10th",
                 event: "Lina Axanova, PhD (Translating Trust: Agreements, IP, and Academic Innovation)",
                 color: "#D7BDE2"
+            },
+            {
+                year: 2026,
+                month: 3,
+                day: 13,
+                dateLabel: "April 13th",
+                event: "Dick Moberg, PhD (CEO & Founder, Moberg Analytics)",
+                color: "#AED6F1",
+                speakerUrl: "https://moberganalytics.com/about-us/our-team/dick-moberg/"
+            },
+            {
+                year: 2026,
+                month: 4,
+                day: 11,
+                dateLabel: "May 11th",
+                event: "Peter Hoehn",
+                color: "#F9E79F",
+                speakerUrl: "https://www.linkedin.com/in/peter-hoehn-a0473443/"
+            },
+            {
+                year: 2026,
+                month: 6,
+                day: 13,
+                dateLabel: "July 13th",
+                event: "Nick Bryan, MD, PhD",
+                color: "#A9DFBF",
+                speakerUrl: "https://galileocds.com/our-team/"
             }
         ];
 
@@ -375,12 +402,17 @@
             scheduleList.innerHTML = "";
 
             schedule.forEach((item, index) => {
+                const speakerProfile = item.speakerUrl
+                    ? `<br><a href="${item.speakerUrl}" target="_blank" rel="noopener">Speaker Profile</a>`
+                    : "";
+
                 const li = document.createElement("li");
                 li.innerHTML = `
                     <strong>${item.dateLabel}, ${item.year}</strong>:
                     <a href="#" class="schedule-link" data-index="${index}">
                         ${item.event}
                     </a>
+                    ${speakerProfile}
                 `;
                 scheduleList.appendChild(li);
             });
