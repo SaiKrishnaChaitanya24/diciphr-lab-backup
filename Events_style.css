@@ -157,7 +157,7 @@ nav ul {
 .logistics-heading {
     margin-top: 1.25em;
     margin-bottom: 0.75em;
-    font-size: 1.2rem;
+    font-size: 1.45rem;
     color: #333;
 }
 
@@ -198,11 +198,12 @@ nav ul {
     font-size: 1.05rem;
 }
 
-/* Calendar and schedule */
+/* Calendar and upcoming talks */
 .calendar-and-schedule {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: stretch;
     max-width: 90%;
     margin: 2em auto;
     gap: 2em;
@@ -216,6 +217,8 @@ nav ul {
     padding: 1.25em;
     flex: 1 1 100%;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .calendar-header {
@@ -259,6 +262,10 @@ nav ul {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.15s;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .calendar-days div:hover {
@@ -270,6 +277,13 @@ nav ul {
     font-weight: bold;
     background-color: #f0f0f0 !important;
     cursor: default !important;
+}
+
+.empty-day {
+    background-color: transparent !important;
+    border: none !important;
+    cursor: default !important;
+    transform: none !important;
 }
 
 .selected {
@@ -287,8 +301,22 @@ nav ul {
 .schedule-container h2 {
     text-align: center;
     color: #51D1E8;
-    margin: 0 0 1em 0;
+    margin: 0 0 0.35em 0;
     font-size: 1.7rem;
+}
+
+.schedule-note {
+    text-align: center;
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.schedule-scroll {
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 0.25em;
 }
 
 #scheduleList {
@@ -451,12 +479,13 @@ nav ul {
     padding-right: 3%;
 }
 
-/* Equal width on desktop */
+/* Desktop */
 @media (min-width: 768px) {
     .calendar-container,
     .schedule-container {
         flex: 1 1 calc(50% - 1em);
         max-width: calc(50% - 1em);
+        height: 560px;
     }
 }
 
@@ -501,11 +530,13 @@ nav ul {
         padding-right: 0;
     }
 
-    .calendar-container {
-        transform: scale(0.92);
-        transform-origin: top center;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    .calendar-container,
+    .schedule-container {
+        height: auto;
+    }
+
+    .schedule-scroll {
+        overflow-y: visible;
     }
 }
 
@@ -524,6 +555,10 @@ nav ul {
         font-size: 1rem;
     }
 
+    .logistics-heading {
+        font-size: 1.25rem;
+    }
+
     .calendar-header {
         flex-direction: column;
     }
@@ -537,6 +572,7 @@ nav ul {
     .calendar-days div {
         padding: 1em;
         font-size: 0.9em;
+        min-height: 48px;
     }
 
     .section-separator {
@@ -566,9 +602,5 @@ nav ul {
 
     .footy-cont {
         margin-right: 0;
-    }
-
-    .calendar-container {
-        transform: scale(1);
     }
 }
