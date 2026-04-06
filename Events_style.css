@@ -154,6 +154,13 @@ nav ul {
     padding-top: 1.5em;
 }
 
+.logistics-heading {
+    margin-top: 1.25em;
+    margin-bottom: 0.75em;
+    font-size: 1.2rem;
+    color: #333;
+}
+
 .seminar-details p {
     margin-bottom: 1em;
     line-height: 1.75;
