@@ -88,7 +88,7 @@
                 </div>
             </section>
 
-            <!-- CALENDAR + UPCOMING TALKS -->
+            <!-- CALENDAR + SCHEDULE -->
             <div class="calendar-and-schedule">
                 <div class="calendar-container">
                     <div class="calendar-header">
@@ -123,10 +123,10 @@
                 </div>
 
                 <div class="schedule-container">
-                    <h2>Upcoming Talks</h2>
-                    <p class="schedule-note">Click a talk to jump to its date on the calendar.</p>
+                    <h2>Schedule</h2>
+                    <p class="schedule-note">Click a talk title to jump to its date on the calendar.</p>
                     <div class="schedule-scroll">
-                        <ul id="scheduleList"></ul>
+                        <div id="scheduleList"></div>
                     </div>
                 </div>
             </div>
@@ -330,7 +330,6 @@
                 day: 13,
                 dateLabel: "April 13th",
                 event: "Dick Moberg, PhD (CEO & Founder, Moberg Analytics)",
-                color: "#AED6F1",
                 speakerUrl: "https://moberganalytics.com/about-us/our-team/dick-moberg/"
             },
             {
@@ -339,7 +338,6 @@
                 day: 11,
                 dateLabel: "May 11th",
                 event: "Peter Hoehn",
-                color: "#F9E79F",
                 speakerUrl: "https://www.linkedin.com/in/peter-hoehn-a0473443/"
             },
             {
@@ -348,8 +346,45 @@
                 day: 13,
                 dateLabel: "July 13th",
                 event: "Nick Bryan, MD, PhD",
-                color: "#A9DFBF",
                 speakerUrl: "https://galileocds.com/our-team/"
+            }
+        ];
+
+        const previousTalks = [
+            {
+                year: 2025,
+                month: 10,
+                day: 10,
+                dateLabel: "November 10th",
+                event: "Lina Axanova, PhD (Translating Trust: Agreements, IP, and Academic Innovation)"
+            },
+            {
+                year: 2025,
+                month: 9,
+                day: 13,
+                dateLabel: "October 13th",
+                event: "Daria F. Ferro, MD (Innovation Ecosystem at CHOP: Enabling Academic Entrepreneurship)"
+            },
+            {
+                year: 2025,
+                month: 8,
+                day: 8,
+                dateLabel: "September 8th",
+                event: "Andrew Tsourkas, PhD (StreamLaunched: Partnering with Faculty to Power Startups)"
+            },
+            {
+                year: 2025,
+                month: 7,
+                day: 18,
+                dateLabel: "August 18th",
+                event: "Katherine Reuther, PhD, MBA (Penn Health-Tech: Idea to Impact)"
+            },
+            {
+                year: 2025,
+                month: 6,
+                day: 14,
+                dateLabel: "July 14th",
+                event: "Kacy Cullen, PhD (From Bench to Boardroom: Navigating the Academic Startup Journey)"
             }
         ];
 
@@ -435,34 +470,55 @@
             });
         }
 
-        function renderSchedule() {
-            const scheduleList = document.getElementById("scheduleList");
-            scheduleList.innerHTML = "";
+        function buildScheduleSection(title, talks) {
+            let html = `
+                <div class="schedule-section">
+                    <div class="schedule-section-title">${title}</div>
+                    <ul class="schedule-list">
+            `;
 
-            upcomingTalks.forEach((item, index) => {
-                const speakerProfile = item.speakerUrl
+            talks.forEach((item) => {
+                const profile = item.speakerUrl
                     ? `<br><a href="${item.speakerUrl}" target="_blank" rel="noopener">Speaker Profile</a>`
                     : "";
 
-                const li = document.createElement("li");
-                li.innerHTML = `
-                    <strong>${item.dateLabel}, ${item.year}</strong>:
-                    <a href="#" class="schedule-link" data-index="${index}">
-                        ${item.event}
-                    </a>
-                    ${speakerProfile}
+                html += `
+                    <li>
+                        <strong>${item.dateLabel}, ${item.year}</strong>:
+                        <a href="#" class="schedule-link"
+                           data-year="${item.year}"
+                           data-month="${item.month}"
+                           data-day="${item.day}">
+                            ${item.event}
+                        </a>
+                        ${profile}
+                    </li>
                 `;
-                scheduleList.appendChild(li);
             });
+
+            html += `
+                    </ul>
+                </div>
+            `;
+
+            return html;
+        }
+
+        function renderSchedule() {
+            const scheduleList = document.getElementById("scheduleList");
+
+            scheduleList.innerHTML =
+                buildScheduleSection("Upcoming Talks", upcomingTalks) +
+                `<div class="schedule-section-divider"></div>` +
+                buildScheduleSection("Previous Talks", previousTalks);
 
             document.querySelectorAll(".schedule-link").forEach(link => {
                 link.addEventListener("click", e => {
                     e.preventDefault();
 
-                    const item = upcomingTalks[parseInt(link.dataset.index, 10)];
-                    displayedYear = item.year;
-                    displayedMonth = item.month;
-                    selectedDay = item.day;
+                    displayedYear = parseInt(link.dataset.year, 10);
+                    displayedMonth = parseInt(link.dataset.month, 10);
+                    selectedDay = parseInt(link.dataset.day, 10);
 
                     renderCalendar();
                     updateSelectedDate();
