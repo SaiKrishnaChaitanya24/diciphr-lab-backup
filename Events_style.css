@@ -198,7 +198,7 @@ nav ul {
     font-size: 1.05rem;
 }
 
-/* Calendar and upcoming talks */
+/* Calendar and schedule */
 .calendar-and-schedule {
     display: flex;
     flex-wrap: wrap;
@@ -319,19 +319,32 @@ nav ul {
     padding-right: 0.25em;
 }
 
-#scheduleList {
+.schedule-section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #51D1E8;
+    margin: 0.5em 0 0.75em 0;
+    text-align: left;
+}
+
+.schedule-section-divider {
+    border-top: 1px solid #ddd;
+    margin: 1em 0;
+}
+
+.schedule-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#scheduleList li {
+.schedule-list li {
     padding: 1em;
     border-bottom: 1px solid #ddd;
     line-height: 1.7;
 }
 
-#scheduleList li:last-child {
+.schedule-list li:last-child {
     border-bottom: none;
 }
 
