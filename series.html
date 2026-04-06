@@ -6,6 +6,40 @@
     <title>Radiology Translation & Commercialization Seminar Series</title>
     <link rel="icon" type="image/png" href="images/brain-logo.png" sizes="32x32" />
     <link rel="stylesheet" type="text/css" href="Events_style.css" />
+
+    <style>
+        /* Small overrides added directly in HTML */
+        .logistics-heading {
+            font-size: 1.45rem !important;
+            margin-top: 1.25em;
+            margin-bottom: 0.75em;
+            color: #333;
+        }
+
+        .schedule-container {
+            overflow-y: auto;
+        }
+
+        @media (min-width: 768px) {
+            .calendar-container,
+            .schedule-container {
+                flex: 1 1 calc(50% - 1em);
+                max-width: calc(50% - 1em);
+                height: 560px;
+            }
+
+            .schedule-container {
+                overflow-y: auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .schedule-container {
+                max-height: none;
+                overflow-y: visible;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -253,53 +287,13 @@
 
         const schedule = [
             {
-                year: 2025,
-                month: 6,
-                day: 14,
-                dateLabel: "July 14th",
-                event: "Kacy Cullen, PhD (From Bench to Boardroom: Navigating the Academic Startup Journey)",
-                color: "#AED6F1"
-            },
-            {
-                year: 2025,
-                month: 7,
-                day: 18,
-                dateLabel: "August 18th",
-                event: "Katherine Reuther, PhD, MBA (Penn Health-Tech: Idea to Impact)",
-                color: "#F9E79F"
-            },
-            {
-                year: 2025,
-                month: 8,
-                day: 8,
-                dateLabel: "September 8th",
-                event: "Andrew Tsourkas, PhD (StreamLaunched: Partnering with Faculty to Power Startups)",
-                color: "#A9DFBF"
-            },
-            {
-                year: 2025,
-                month: 9,
-                day: 13,
-                dateLabel: "October 13th",
-                event: "Daria F. Ferro, MD (Innovation Ecosystem at CHOP: Enabling Academic Entrepreneurship)",
-                color: "#F5B7B1"
-            },
-            {
-                year: 2025,
-                month: 10,
-                day: 10,
-                dateLabel: "November 10th",
-                event: "Lina Axanova, PhD (Translating Trust: Agreements, IP, and Academic Innovation)",
-                color: "#D7BDE2"
-            },
-            {
                 year: 2026,
-                month: 3,
+                month: 6,
                 day: 13,
-                dateLabel: "April 13th",
-                event: "Dick Moberg, PhD (CEO & Founder, Moberg Analytics)",
-                color: "#AED6F1",
-                speakerUrl: "https://moberganalytics.com/about-us/our-team/dick-moberg/"
+                dateLabel: "July 13th",
+                event: "Nick Bryan, MD, PhD",
+                color: "#A9DFBF",
+                speakerUrl: "https://galileocds.com/our-team/"
             },
             {
                 year: 2026,
@@ -312,12 +306,52 @@
             },
             {
                 year: 2026,
-                month: 6,
+                month: 3,
                 day: 13,
-                dateLabel: "July 13th",
-                event: "Nick Bryan, MD, PhD",
-                color: "#A9DFBF",
-                speakerUrl: "https://galileocds.com/our-team/"
+                dateLabel: "April 13th",
+                event: "Dick Moberg, PhD (CEO & Founder, Moberg Analytics)",
+                color: "#AED6F1",
+                speakerUrl: "https://moberganalytics.com/about-us/our-team/dick-moberg/"
+            },
+            {
+                year: 2025,
+                month: 10,
+                day: 10,
+                dateLabel: "November 10th",
+                event: "Lina Axanova, PhD (Translating Trust: Agreements, IP, and Academic Innovation)",
+                color: "#D7BDE2"
+            },
+            {
+                year: 2025,
+                month: 9,
+                day: 13,
+                dateLabel: "October 13th",
+                event: "Daria F. Ferro, MD (Innovation Ecosystem at CHOP: Enabling Academic Entrepreneurship)",
+                color: "#F5B7B1"
+            },
+            {
+                year: 2025,
+                month: 8,
+                day: 8,
+                dateLabel: "September 8th",
+                event: "Andrew Tsourkas, PhD (StreamLaunched: Partnering with Faculty to Power Startups)",
+                color: "#A9DFBF"
+            },
+            {
+                year: 2025,
+                month: 7,
+                day: 18,
+                dateLabel: "August 18th",
+                event: "Katherine Reuther, PhD, MBA (Penn Health-Tech: Idea to Impact)",
+                color: "#F9E79F"
+            },
+            {
+                year: 2025,
+                month: 6,
+                day: 14,
+                dateLabel: "July 14th",
+                event: "Kacy Cullen, PhD (From Bench to Boardroom: Navigating the Academic Startup Journey)",
+                color: "#AED6F1"
             }
         ];
 
