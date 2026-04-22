@@ -88,48 +88,16 @@
                 </div>
             </section>
 
-            <!-- CALENDAR + SCHEDULE -->
-            <div class="calendar-and-schedule">
-                <div class="calendar-container">
-                    <div class="calendar-header">
-                        <button class="prev-btn" type="button">Prev</button>
-                        <h2 id="monthYear">January 2025</h2>
-                        <button class="next-btn" type="button">Next</button>
-
-                        <select id="monthSelect" aria-label="Select month">
-                            <option value="0">January</option>
-                            <option value="1">February</option>
-                            <option value="2">March</option>
-                            <option value="3">April</option>
-                            <option value="4">May</option>
-                            <option value="5">June</option>
-                            <option value="6">July</option>
-                            <option value="7">August</option>
-                            <option value="8">September</option>
-                            <option value="9">October</option>
-                            <option value="10">November</option>
-                            <option value="11">December</option>
-                        </select>
-
-                        <select id="yearSelect" aria-label="Select year">
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                        </select>
-                    </div>
-
-                    <div class="calendar-days" id="calendarDays"></div>
-                    <div id="selectedDate">Selected Date: None</div>
-                </div>
-
+            <!-- SCHEDULE ONLY -->
+            <section class="schedule-only-section">
                 <div class="schedule-container">
                     <h2>Schedule</h2>
-                    <p class="schedule-note">Click a talk title to jump to its date on the calendar.</p>
+                    <p class="schedule-note">Upcoming and previous talks are listed below.</p>
                     <div class="schedule-scroll">
                         <div id="scheduleList"></div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- SEPARATOR -->
             <div class="section-separator">
@@ -252,77 +220,6 @@
     </div>
 
     <script>
-        let displayedYear = 2025;
-        let displayedMonth = 0;
-        let selectedDay = null;
-
-        const calendarEvents = [
-            {
-                year: 2025,
-                month: 6,
-                day: 14,
-                dateLabel: "July 14th",
-                event: "Kacy Cullen, PhD (From Bench to Boardroom: Navigating the Academic Startup Journey)",
-                color: "#AED6F1"
-            },
-            {
-                year: 2025,
-                month: 7,
-                day: 18,
-                dateLabel: "August 18th",
-                event: "Katherine Reuther, PhD, MBA (Penn Health-Tech: Idea to Impact)",
-                color: "#F9E79F"
-            },
-            {
-                year: 2025,
-                month: 8,
-                day: 8,
-                dateLabel: "September 8th",
-                event: "Andrew Tsourkas, PhD (StreamLaunched: Partnering with Faculty to Power Startups)",
-                color: "#A9DFBF"
-            },
-            {
-                year: 2025,
-                month: 9,
-                day: 13,
-                dateLabel: "October 13th",
-                event: "Daria F. Ferro, MD (Innovation Ecosystem at CHOP: Enabling Academic Entrepreneurship)",
-                color: "#F5B7B1"
-            },
-            {
-                year: 2025,
-                month: 10,
-                day: 10,
-                dateLabel: "November 10th",
-                event: "Lina Axanova, PhD (Translating Trust: Agreements, IP, and Academic Innovation)",
-                color: "#D7BDE2"
-            },
-            {
-                year: 2026,
-                month: 3,
-                day: 13,
-                dateLabel: "April 13th",
-                event: "Dick Moberg, PhD (CEO & Founder, Moberg Analytics)",
-                color: "#AED6F1"
-            },
-            {
-                year: 2026,
-                month: 4,
-                day: 11,
-                dateLabel: "May 11th",
-                event: "Peter Hoehn",
-                color: "#F9E79F"
-            },
-            {
-                year: 2026,
-                month: 6,
-                day: 13,
-                dateLabel: "July 13th",
-                event: "Nick Bryan, MD, PhD",
-                color: "#A9DFBF"
-            }
-        ];
-
         const upcomingTalks = [
             {
                 year: 2026,
@@ -388,88 +285,6 @@
             }
         ];
 
-        function renderCalendar() {
-            const monthYearElement = document.getElementById("monthYear");
-            const calendarDaysElement = document.getElementById("calendarDays");
-            const monthSelect = document.getElementById("monthSelect");
-            const yearSelect = document.getElementById("yearSelect");
-
-            monthYearElement.textContent =
-                `${new Date(displayedYear, displayedMonth, 1).toLocaleString('default', { month: 'long' })} ${displayedYear}`;
-
-            monthSelect.value = displayedMonth;
-            yearSelect.value = displayedYear;
-
-            const firstDay = new Date(displayedYear, displayedMonth, 1).getDay();
-            const totalDays = new Date(displayedYear, displayedMonth + 1, 0).getDate();
-
-            calendarDaysElement.innerHTML = `
-                <div class="day-name">Sun</div>
-                <div class="day-name">Mon</div>
-                <div class="day-name">Tue</div>
-                <div class="day-name">Wed</div>
-                <div class="day-name">Thu</div>
-                <div class="day-name">Fri</div>
-                <div class="day-name">Sat</div>
-            `;
-
-            for (let i = 0; i < firstDay; i++) {
-                const emptyDiv = document.createElement("div");
-                emptyDiv.classList.add("empty-day");
-                calendarDaysElement.appendChild(emptyDiv);
-            }
-
-            for (let day = 1; day <= totalDays; day++) {
-                const dayDiv = document.createElement("div");
-                dayDiv.textContent = day;
-                dayDiv.classList.add("day");
-
-                if (selectedDay === day) {
-                    dayDiv.classList.add("selected");
-                }
-
-                dayDiv.addEventListener("click", () => {
-                    selectedDay = day;
-                    updateSelectedDate();
-                    renderCalendar();
-                });
-
-                calendarDaysElement.appendChild(dayDiv);
-            }
-
-            highlightCalendarEvents();
-        }
-
-        function updateSelectedDate() {
-            const selectedDateElement = document.getElementById("selectedDate");
-
-            if (selectedDay === null) {
-                selectedDateElement.textContent = "Selected Date: None";
-                return;
-            }
-
-            selectedDateElement.textContent =
-                `Selected Date: ${selectedDay} ${new Date(displayedYear, displayedMonth, 1).toLocaleString('default', { month: 'long' })} ${displayedYear}`;
-        }
-
-        function highlightCalendarEvents() {
-            const allDays = document.querySelectorAll(".day");
-
-            allDays.forEach(dayDiv => {
-                const dayNum = parseInt(dayDiv.textContent, 10);
-
-                calendarEvents.forEach(event => {
-                    if (
-                        event.year === displayedYear &&
-                        event.month === displayedMonth &&
-                        event.day === dayNum
-                    ) {
-                        dayDiv.style.backgroundColor = event.color;
-                    }
-                });
-            });
-        }
-
         function buildScheduleSection(title, talks) {
             let html = `
                 <div class="schedule-section">
@@ -485,12 +300,7 @@
                 html += `
                     <li>
                         <strong>${item.dateLabel}, ${item.year}</strong>:
-                        <a href="#" class="schedule-link"
-                           data-year="${item.year}"
-                           data-month="${item.month}"
-                           data-day="${item.day}">
-                            ${item.event}
-                        </a>
+                        ${item.event}
                         ${profile}
                     </li>
                 `;
@@ -511,64 +321,9 @@
                 buildScheduleSection("Upcoming Talks", upcomingTalks) +
                 `<div class="schedule-section-divider"></div>` +
                 buildScheduleSection("Previous Talks", previousTalks);
-
-            document.querySelectorAll(".schedule-link").forEach(link => {
-                link.addEventListener("click", e => {
-                    e.preventDefault();
-
-                    displayedYear = parseInt(link.dataset.year, 10);
-                    displayedMonth = parseInt(link.dataset.month, 10);
-                    selectedDay = parseInt(link.dataset.day, 10);
-
-                    renderCalendar();
-                    updateSelectedDate();
-
-                    document.querySelector(".calendar-container").scrollIntoView({
-                        behavior: "smooth"
-                    });
-                });
-            });
         }
 
-        document.querySelector(".prev-btn").addEventListener("click", () => {
-            displayedMonth -= 1;
-            if (displayedMonth < 0) {
-                displayedMonth = 11;
-                displayedYear -= 1;
-            }
-            selectedDay = null;
-            updateSelectedDate();
-            renderCalendar();
-        });
-
-        document.querySelector(".next-btn").addEventListener("click", () => {
-            displayedMonth += 1;
-            if (displayedMonth > 11) {
-                displayedMonth = 0;
-                displayedYear += 1;
-            }
-            selectedDay = null;
-            updateSelectedDate();
-            renderCalendar();
-        });
-
-        document.getElementById("monthSelect").addEventListener("change", (e) => {
-            displayedMonth = parseInt(e.target.value, 10);
-            selectedDay = null;
-            updateSelectedDate();
-            renderCalendar();
-        });
-
-        document.getElementById("yearSelect").addEventListener("change", (e) => {
-            displayedYear = parseInt(e.target.value, 10);
-            selectedDay = null;
-            updateSelectedDate();
-            renderCalendar();
-        });
-
-        renderCalendar();
         renderSchedule();
-        updateSelectedDate();
     </script>
 </body>
 </html>
