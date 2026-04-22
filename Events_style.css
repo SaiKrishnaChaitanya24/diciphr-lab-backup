@@ -198,147 +198,59 @@ nav ul {
     font-size: 1.05rem;
 }
 
-/* Calendar and schedule */
-.calendar-and-schedule {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    max-width: 90%;
-    margin: 2em auto;
-    gap: 2em;
-}
-
+/* Schedule only */
 .schedule-only-section {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 0 30px;
 }
 
-.schedule-container {
-    width: 100%;
-}
-.calendar-container,
-.schedule-container {
+.schedule-only-section .schedule-container {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding: 1.25em;
-    flex: 1 1 100%;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2em 2.5em;
     display: flex;
     flex-direction: column;
-}
-
-.calendar-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75em;
-    margin-bottom: 1em;
-}
-
-.calendar-header button,
-.calendar-header select {
-    padding: 0.6em 1em;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f4f4f4;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.calendar-header h2 {
-    margin: 0;
-    color: #333;
-    font-size: 1.5rem;
-}
-
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    text-align: center;
-}
-
-.calendar-days div {
-    padding: 1.2em;
-    font-size: 1em;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.15s;
-    min-height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.calendar-days div:hover {
-    background-color: #ddd;
-    transform: translateY(-1px);
-}
-
-.day-name {
-    font-weight: bold;
-    background-color: #f0f0f0 !important;
-    cursor: default !important;
-}
-
-.empty-day {
-    background-color: transparent !important;
-    border: none !important;
-    cursor: default !important;
-    transform: none !important;
-}
-
-.selected {
-    background-color: lightgreen !important;
-    color: white;
-}
-
-#selectedDate {
-    margin-top: 1em;
-    font-size: 1.1em;
-    text-align: center;
-    color: #333;
+    height: auto;
 }
 
 .schedule-container h2 {
     text-align: center;
     color: #51D1E8;
     margin: 0 0 0.35em 0;
-    font-size: 1.7rem;
+    font-size: 2.2rem;
 }
 
 .schedule-note {
     text-align: center;
     color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 1em;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    margin-bottom: 1.4em;
+    line-height: 1.6;
 }
 
 .schedule-scroll {
-    overflow-y: auto;
+    overflow-y: visible;
     flex: 1;
     padding-right: 0.25em;
 }
 
 .schedule-section-title {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: #51D1E8;
-    margin: 0.5em 0 0.75em 0;
+    margin: 0.5em 0 1em 0;
     text-align: left;
 }
 
 .schedule-section-divider {
     border-top: 1px solid #ddd;
-    margin: 1em 0;
+    margin: 1.25em 0;
 }
 
 .schedule-list {
@@ -348,9 +260,10 @@ nav ul {
 }
 
 .schedule-list li {
-    padding: 1em;
+    padding: 1.2em 1em;
     border-bottom: 1px solid #ddd;
-    line-height: 1.7;
+    line-height: 1.9;
+    font-size: 1.1rem;
 }
 
 .schedule-list li:last-child {
@@ -503,11 +416,10 @@ nav ul {
 
 /* Desktop */
 @media (min-width: 768px) {
-    .calendar-container,
-    .schedule-container {
-        flex: 1 1 calc(50% - 1em);
-        max-width: calc(50% - 1em);
-        height: 560px;
+    .schedule-only-section .schedule-container {
+        width: 100%;
+        max-width: 1100px;
+        height: auto;
     }
 }
 
@@ -541,6 +453,20 @@ nav ul {
         padding-right: 10%;
     }
 
+    .schedule-only-section {
+        padding: 0 20px;
+        margin: 35px auto;
+    }
+
+    .schedule-only-section .schedule-container {
+        max-width: 100%;
+        padding: 1.5em;
+    }
+
+    .schedule-scroll {
+        overflow-y: visible;
+    }
+
     .footer {
         flex-direction: column;
         height: auto;
@@ -550,15 +476,6 @@ nav ul {
 
     .pennmed-logo {
         padding-right: 0;
-    }
-
-    .calendar-container,
-    .schedule-container {
-        height: auto;
-    }
-
-    .schedule-scroll {
-        overflow-y: visible;
     }
 }
 
@@ -581,20 +498,22 @@ nav ul {
         font-size: 1.25rem;
     }
 
-    .calendar-header {
-        flex-direction: column;
+    .schedule-container h2 {
+        font-size: 1.8rem;
     }
 
-    .calendar-header button,
-    .calendar-header select {
-        width: 100%;
-        margin-bottom: 0.5em;
+    .schedule-note {
+        font-size: 0.98rem;
     }
 
-    .calendar-days div {
-        padding: 1em;
-        font-size: 0.9em;
-        min-height: 48px;
+    .schedule-section-title {
+        font-size: 1.2rem;
+    }
+
+    .schedule-list li {
+        font-size: 1rem;
+        padding: 1em 0.75em;
+        line-height: 1.75;
     }
 
     .section-separator {
