@@ -1,123 +1,1197 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diciphr Website</title>
-  <link rel="icon" type="image/png" href="images/brain-logo.png" sizes="32x32">
-  <link rel="stylesheet" type="text/css" href="team_style.css">
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Team | DiCIPHR Lab</title>
+
+
+    <style>
+
+        /* ==========================================================
+           FONT
+        ========================================================== */
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+
+        /* ==========================================================
+           GLOBAL
+        ========================================================== */
+
+        html,
+        body {
+            padding-left: 0;
+            margin: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+            font-family: 'DM Sans', sans-serif;
+
+            font-weight: 400;
+        }
+
+
+        body p,
+        body ul,
+        body h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body ul {
+            list-style-type: none;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        .outside-container {
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+        }
+
+
+        .container {
+            margin: 0 auto;
+            padding: 0;
+
+            width: 100%;
+            max-width: 1920px;
+        }
+
+
+
+        /* ==========================================================
+           NAVIGATION
+        ========================================================== */
+
+        .nav-bar-container {
+            padding: 2em 0;
+        }
+
+
+        img.lab-logo {
+            height: 70px;
+            width: auto;
+        }
+
+
+        .home-link {
+            margin-left: 5%;
+            margin-right: 10%;
+        }
+
+
+        nav {
+            margin: 0;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        nav ul {
+            display: flex;
+
+            margin-right: 5%;
+        }
+
+
+        .nav-bar-container ul li {
+            padding-left: 2em;
+            padding-right: 2em;
+
+            font-size: 1.2em;
+        }
+
+
+        .nav-bar-container a {
+            text-decoration: none;
+
+            color: black;
+        }
+
+
+        .current-tab {
+            color: #51D1E8;
+        }
+
+
+
+        /* ==========================================================
+           DROPDOWN
+        ========================================================== */
+
+        .dropdown {
+            position: relative;
+
+            display: inline-block;
+        }
+
+
+        .dropdown-content {
+            display: none;
+
+            position: absolute;
+
+            background-color: #ffffff;
+
+            min-width: 160px;
+
+            box-shadow:
+                0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+            z-index: 1;
+
+            overflow: auto;
+
+            border: 1px solid #dddddd;
+        }
+
+
+        .drop-item-1 {
+            padding-top: 15px;
+        }
+
+
+        .drop-item-2 {
+            padding-top: 15px;
+
+            padding-bottom: 15px;
+        }
+
+
+        .dropdown-content a:hover {
+            background-color: #dddddd;
+        }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+
+        /* ==========================================================
+           GENERAL TEAM STYLING
+        ========================================================== */
+
+        .pi,
+        .director,
+        .postdocs {
+            margin-top: 3%;
+
+            text-align: center;
+        }
+
+
+        .title {
+            padding-top: 2%;
+            padding-bottom: 5%;
+
+            color: #51D1E8;
+
+            font-size: 2.7em;
+
+            font-weight: 500;
+
+            text-align: center;
+        }
+
+
+
+        /* ==========================================================
+           ROUND HEADSHOTS
+        ========================================================== */
+
+        .round-imgs {
+            width: 12.5em;
+            height: 12.5em;
+
+            overflow: hidden;
+
+            border-radius: 50%;
+
+            margin: 0 auto;
+        }
+
+
+        .round-imgs img {
+            margin: 0 auto;
+
+            height: 135%;
+            width: auto;
+        }
+
+
+        .name {
+            padding: 35px 0;
+
+            color: black;
+
+            font-size: 1.3em;
+
+            font-weight: 420;
+
+            text-align: center;
+        }
+
+
+        .name a {
+            color: black;
+        }
+
+
+
+        /* ==========================================================
+           SPECIAL IMAGE CROPPING
+        ========================================================== */
+
+        .drew-img {
+            margin: 0 auto;
+
+            height: 140% !important;
+
+            width: auto;
+        }
+
+
+        .yusuf-img {
+            margin: 0 auto;
+
+            height: 100% !important;
+
+            width: auto;
+        }
+
+
+        .ragini-img {
+            margin: 0 auto;
+
+            height: 100% !important;
+
+            width: auto;
+        }
+
+
+
+        /* ==========================================================
+           TEAM ROWS
+        ========================================================== */
+
+        .team-cont {
+            padding: 0 10%;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            align-items: flex-start;
+        }
+
+
+
+        /* ==========================================================
+           NEW LEADERSHIP LAYOUT
+           Ragini first
+           Drew + Bridget second row
+        ========================================================== */
+
+        .leadership-row {
+            width: 80%;
+
+            margin: 1% auto 5%;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: flex-start;
+
+            gap: 10em;
+
+            text-align: center;
+        }
+
+
+        .leadership-person {
+            width: 20em;
+
+            text-align: center;
+        }
+
+
+        .leadership-role {
+            min-height: 2.5em;
+
+            margin-bottom: 1.3em;
+
+            color: #51D1E8;
+
+            font-size: 2em;
+
+            font-weight: 500;
+
+            text-align: center;
+        }
+
+
+        .leadership-person .name {
+            padding: 35px 0;
+        }
+
+
+
+        /* ==========================================================
+           FOOTER
+        ========================================================== */
+
+        .footer {
+            margin-top: 5%;
+
+            background-color: #EEEEEE;
+
+            height: 130px;
+
+            display: flex;
+
+            align-items: center;
+
+            text-align: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+        }
+
+
+        .penn-logo {
+            height: 6em;
+
+            width: auto;
+        }
+
+
+        .pennmed-logo {
+            height: 5.75em;
+
+            width: auto;
+
+            padding-right: 15em;
+        }
+
+
+        .footy-cont {
+            display: flex;
+
+            align-items: center;
+
+            font-size: 1.1em;
+
+            font-weight: 600;
+
+            margin-right: 5%;
+        }
+
+
+        .twitter {
+            height: 58px;
+
+            width: auto;
+
+            padding-left: 3%;
+
+            padding-right: 3%;
+        }
+
+
+
+        /* ==========================================================
+           MOBILE
+        ========================================================== */
+
+        @media screen and (max-width: 768px) {
+
+            body,
+            header {
+                transform: none;
+
+                padding: 0;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+
+            .outside-container {
+                padding-left: 1em;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                width: 100%;
+            }
+
+
+            .container {
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                width: 100%;
+            }
+
+
+            nav {
+                flex-direction: column;
+
+                width: 100%;
+            }
+
+
+            .home-link {
+                margin: 0 0 1em 0;
+            }
+
+
+            .nav-bar-container ul {
+                flex-direction: column;
+
+                align-items: center;
+
+                padding: 0;
+
+                margin: 0;
+            }
+
+
+            .nav-bar-container ul li {
+                padding: 1em 0;
+
+                text-align: center;
+
+                width: 100%;
+            }
+
+
+            .title {
+                font-size: 2em;
+
+                margin: 5% 0;
+            }
+
+
+            .round-imgs {
+                width: 8em;
+                height: 8em;
+
+                overflow: hidden;
+
+                border-radius: 50%;
+
+                margin: 0 auto;
+            }
+
+
+            .round-imgs img {
+                margin: 0 auto;
+
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+            }
+
+
+            .name,
+            .leadership-role {
+                text-align: center;
+            }
+
+
+            .team-cont {
+                flex-direction: column;
+
+                align-items: center;
+
+                padding: 0 5%;
+            }
+
+
+            /* Drew + Bridget become vertical on phones */
+
+            .leadership-row {
+                width: 100%;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 2em;
+            }
+
+
+            .leadership-person {
+                width: 100%;
+            }
+
+
+            .footer {
+                flex-direction: column;
+
+                height: auto;
+
+                padding: 2em 5%;
+
+                width: 100%;
+            }
+
+
+            .pennmed-logo {
+                padding-right: 0;
+            }
+
+
+            .footy-cont {
+                margin: 1em 0;
+
+                text-align: center;
+            }
+
+
+            .dropdown-content {
+                left: 0;
+                right: 0;
+
+                width: auto;
+                min-width: 100%;
+
+                box-sizing: border-box;
+
+                position: static;
+
+                background-color: #ffffff;
+
+                border: 1px solid #dddddd;
+            }
+
+
+            .dropdown-content a {
+                text-align: center;
+
+                padding: 30px 0;
+            }
+
+
+            .dropdown-content .drop-item-1,
+            .dropdown-content .drop-item-2 {
+                padding: 30px 0;
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
+
 <body>
-  <header>
-      <div class="outside-container">
-          <div class="container">
-              <div class="nav-bar-container">
-                  <nav>
-                      <a class="home-link" href="index.html"><img src="images/logo_color.png" class="lab-logo"></a>
-                      <ul>
-                          <li><a href="research.html">Research</a></li>
-                          <li>
-                              <div class="dropdown">
-                                  <a href="team.html"><div class="current-tab">Team</div></a>
-                                  <div class="dropdown-content">
-                                      <div class="drop-item-1"><a href="alumni.html">Alumni</a></div>
-                                      <div class="drop-item-2"><a href="collabs.html">Collaborators</a></div>
-                                  </div>
-                              </div>
-                          </li>
-                          <li><a href="publications.html">Publications</a></li>
-                          <li><a href="software.html">Software</a></li>
-                          <li><a href="series.html">Translation & Commercialization Series</a></li>
-                          <li><a href="join.html">Join</a></li>
-                      </ul>
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </header>
 
-  <div class="outside-container">
-      <div class="flex-wrapper">
-          <div class="container">
-              <div class="leadership">
-                  <p class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leadership</p>
-                  <div class="team-cont">
-                      <div class="pi">
-                          <p class='title'> Principal Investigator </p> 
-                          <div class="round-imgs"><a href="bio/ragini.html"><img class="ragini-img" src="images/Headshots/ragini_1.JPG"></a></div>
-                          <p class="name"><a href="bio/ragini.html">Ragini Verma</a></p>
-                      </div>
-                      <div class="director">
-                          <p class='title'> Director </p> 
-                          <div class="round-imgs"><a href="bio/drew.html"><img class="drew-img" src="images/Headshots/Drew.jpg"></a></div>
-                          <p class="name"><a href="bio/drew.html">Drew Parker</a></p>
-                      </div>
-                  </div>
-              </div>
 
-              <div class="postdocs">
-                  <p class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Postdoctoral Fellows</p>
-                  <div class="team-cont">
-                        <div class="item2">
-                          <div class="round-imgs"><img src="images/Headshots/Livia.png"></div>
-                          <p class="name"><a href="bio/Livia.html">Livia Maria de Aguiar Rodrigues</a></p>
-                        </div>
-                        <div class="item1">
-                            <div class="round-imgs"><img class="yusuf-img" src="images/Headshots/Javid.jpg"></div>
-                            <p class="name"><a href="bio/Javid.html">Javid Dadashkarimi</a></p>
-                        </div>
-                        <div class="item2">
-                            <div class="round-imgs"><img class="yusuf-img" src="images/Headshots/Nima.jpeg"></div>
-                            <p class="name"><a href="bio/Nima.html">Nima Broomand Lomer</a></p>
-                        </div>
-                        <div class="item1">
-                            <div class="round-imgs"><img class="drew-img" src="images/Headshots/Tyler.jpg"></div>
-                            <p class="name"><a href="bio/Tyler.html">Tyler Spears</a></p>
-                        </div>
-                    </div>                      
-                  </div>                
-              </div>
+<div class="outside-container">
 
-                <div class="postdocs">
-                    <p class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Research Program Manager</p>
-                    <div class="team-cont">
-                        <div class="item1">
-                            <div class="round-imgs"><a href="bio/Bridget.html"><img class="ragini-img" src="images/Headshots/Bridget3.jpg"></a></div>
-                            <p class="name"><a href="bio/Bridget.html">Bridget Austin</a></p>
-                        </div>                    
-                </div> 
-                <div class="postdocs">
-                    <p class="title">&nbsp;&nbsp;Data Analysts</p>
-                    <div class="team-cont">
-                        <div class="item1">
-                            <div class="round-imgs"><img src="images/Headshots/Chaitanya.jpg"></div>
-                            <p class="name"><a href="bio/Chaitanya.html">Chaitanya Annavazala</a></p>
+    <div class="container">
+
+
+        <!-- ======================================================
+             HEADER
+        ======================================================= -->
+
+        <div class="nav-bar-container">
+
+            <nav>
+
+
+                <a class="home-link"
+                   href="index.html">
+
+                    <img
+                        src="images/logo_color.png"
+                        class="lab-logo"
+                        alt="DiCIPHR Lab">
+
+                </a>
+
+
+
+                <ul>
+
+
+                    <li>
+                        <a href="research.html">
+                            Research
+                        </a>
+                    </li>
+
+
+
+                    <li>
+
+                        <div class="dropdown">
+
+                            <a href="team.html">
+                                <span class="current-tab">
+                                    Team
+                                </span>
+                            </a>
+
+
+                            <div class="dropdown-content">
+
+
+                                <div class="drop-item-1">
+
+                                    <a href="alumni.html">
+                                        Alumni
+                                    </a>
+
+                                </div>
+
+
+                                <div class="drop-item-2">
+
+                                    <a href="collabs.html">
+                                        Collaborators
+                                    </a>
+
+                                </div>
+
+
+                            </div>
+
                         </div>
-                        <div class="item2">
-                            <div class="round-imgs"><img src="images/Headshots/sadia.png"></div>
-                            <p class="name"><a href="bio/sadia.html">Sadia Afreen</a></p>
-                        </div>
-                    </div>                      
-                </div>     
 
-                <div class="postdocs">
-                    <p class="title">Trainees</p>
-                    <div class="team-cont">
-                        <div class="item1">
-                            <div class="round-imgs"><img class="drew-img"src="images/Headshots/Pushkar.png"></div>
-                            <p class="name"><a href="bio/Pushkar.html">Pushkar Ambastha</a></p>
-                        </div>  
-                    </div>                     
-                </div>     
-          </div>
+                    </li>
 
-          <div class="footer">
-              <a href="https://www.upenn.edu/"><img class="penn-logo" src="images/social-media-icons/pennLogo.png"></a>
-              <a href="https://www.med.upenn.edu/"><img class="pennmed-logo" src="images/social-media-icons/psom.png"></a>  
-              <div class="footy-cont">
-                  <img class="twitter" src="images/social-media-icons/black-and-white-twitter-icon-3.jpg"><a href="https://twitter.com/DiCIPHR" style="text-decoration: none; color: black;">Twitter</a>
-              </div>
-          </div>    
-      </div>
-  </div>
 
-</body></html>
+
+                    <li>
+                        <a href="publications.html">
+                            Publications
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="software.html">
+                            Software
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="vesper.html">
+                            VESPER
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="series.html">
+                            Translation &amp; Commercialization Series
+                        </a>
+                    </li>
+
+
+
+                    <!-- Keep/remove this depending on whether
+                         you want VESPER visible on Team locally -->
+
+
+                    <li>
+                        <a href="join.html">
+                            Join
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+
+        </div>
+
+
+
+        <!-- ======================================================
+             RAGINI
+        ======================================================= -->
+
+        <div class="pi">
+
+
+            <p class="title">
+                Principal Investigator
+            </p>
+
+
+            <div class="round-imgs">
+
+                <!-- Keep your existing Ragini path if different -->
+
+                <a href="bio/ragini.html">
+
+                    <img
+                        class="ragini-img"
+                        src="images/Headshots/ragini_2.JPG"
+                        alt="Ragini Verma">
+
+                </a>
+
+            </div>
+
+
+            <p class="name">
+
+                <a href="bio/ragini.html">
+                    Ragini Verma
+                </a>
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- ======================================================
+             DREW + BRIDGET
+        ======================================================= -->
+
+        <div class="leadership-row">
+
+
+            <!-- DREW -->
+
+            <div class="leadership-person">
+
+
+                <p class="leadership-role">
+                    Director
+                </p>
+
+
+                <div class="round-imgs">
+
+                    <!--
+                    IMPORTANT:
+                    Use Drew's EXISTING image path here
+                    if this filename is different.
+                    -->
+
+                    <a href="bio/Drew.html">
+
+                        <img
+                            class="drew-img"
+                            src="images/Headshots/Drew.jpg"
+                            alt="Drew">
+
+                    </a>
+
+                </div>
+
+
+                <p class="name">
+
+                    <!-- Use Drew's existing full name / bio link -->
+
+                    <a href="bio/Drew.html">
+                        Drew
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- BRIDGET -->
+
+            <div class="leadership-person">
+
+
+                <p class="leadership-role">
+                    Research Program Manager
+                </p>
+
+
+                <div class="round-imgs">
+
+                    <a href="bio/Bridget.html">
+
+                        <img
+                            class="drew-img"
+                            src="images/Headshots/Bridget3.jpg"
+                            alt="Bridget Austin">
+
+                    </a>
+
+                </div>
+
+
+                <p class="name">
+
+                    <a href="bio/Bridget.html">
+                        Bridget Austin
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================================
+             POSTDOCTORAL FELLOWS
+        ======================================================= -->
+
+        <div class="postdocs">
+
+
+            <p class="title">
+                Postdoctoral Fellows
+            </p>
+
+
+            <div class="team-cont">
+
+
+                <!-- Livia -->
+
+                <div class="item2">
+
+
+                    <div class="round-imgs">
+
+                        <img
+                            src="images/Headshots/Livia.png"
+                            alt="Livia Maria de Aguiar Rodrigues">
+
+                    </div>
+
+
+                    <p class="name">
+
+                        <a href="bio/Livia.html">
+                            Livia Maria de Aguiar Rodrigues
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- Javid -->
+
+                <div class="item1">
+
+
+                    <div class="round-imgs">
+
+                        <img
+                            class="yusuf-img"
+                            src="images/Headshots/Javid.jpg"
+                            alt="Javid Dadashkarimi">
+
+                    </div>
+
+
+                    <p class="name">
+
+                        <a href="bio/Javid.html">
+                            Javid Dadashkarimi
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- Nima -->
+
+                <div class="item2">
+
+
+                    <div class="round-imgs">
+
+                        <img
+                            class="yusuf-img"
+                            src="images/Headshots/Nima.jpeg"
+                            alt="Nima Broomand Lomer">
+
+                    </div>
+
+
+                    <p class="name">
+
+                        <a href="bio/Nima.html">
+                            Nima Broomand Lomer
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- Tyler -->
+
+                <div class="item1">
+
+
+                    <div class="round-imgs">
+
+                        <img
+                            class="drew-img"
+                            src="images/Headshots/Tyler.jpg"
+                            alt="Tyler Spears">
+
+                    </div>
+
+
+                    <p class="name">
+
+                        <a href="bio/Tyler.html">
+                            Tyler Spears
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================================
+             DATA ANALYSTS
+        ======================================================= -->
+
+        <div class="postdocs">
+
+
+            <p class="title">
+                Data Analysts
+            </p>
+
+
+            <div class="team-cont">
+
+
+                <!-- Chaitanya -->
+
+                <div class="item1">
+
+
+                    <div class="round-imgs">
+
+                        <img
+                            src="images/Headshots/Chaitanya.jpg"
+                            alt="Chaitanya Annavazala">
+
+                    </div>
+
+
+                    <p class="name">
+
+                        <a href="bio/Chaitanya.html">
+                            Chaitanya Annavazala
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- Sadia -->
+
+                <div class="item2">
+
+
+                    <div class="round-imgs">
+
+                        <img
+                            src="images/Headshots/sadia.png"
+                            alt="Sadia Afreen">
+
+                    </div>
+
+
+                    <p class="name">
+
+                        <a href="bio/sadia.html">
+                            Sadia Afreen
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================================
+             TRAINEES
+        ======================================================= -->
+
+        <div class="postdocs">
+
+
+            <p class="title">
+                Trainees
+            </p>
+
+
+            <div class="team-cont">
+
+
+                <div class="item1">
+
+
+                    <div class="round-imgs">
+
+                        <img
+                            class="drew-img"
+                            src="images/Headshots/Pushkar.png"
+                            alt="Pushkar Ambastha">
+
+                    </div>
+
+
+                    <p class="name">
+
+                        <a href="bio/Pushkar.html">
+                            Pushkar Ambastha
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================================
+             FOOTER
+        ======================================================= -->
+
+        <div class="footer">
+
+
+            <a href="https://www.upenn.edu/">
+
+                <img
+                    class="penn-logo"
+                    src="images/social-media-icons/pennLogo.png"
+                    alt="University of Pennsylvania">
+
+            </a>
+
+
+
+            <a href="https://www.med.upenn.edu/">
+
+                <img
+                    class="pennmed-logo"
+                    src="images/social-media-icons/psom.png"
+                    alt="Penn Medicine">
+
+            </a>
+
+
+
+            <div class="footy-cont">
+
+
+                <img
+                    class="twitter"
+                    src="images/social-media-icons/black-and-white-twitter-icon-3.jpg"
+                    alt="Twitter">
+
+
+                <a
+                    href="https://twitter.com/DiCIPHR"
+                    style="text-decoration: none; color: black;">
+
+                    Twitter
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
